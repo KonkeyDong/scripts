@@ -48,6 +48,7 @@ sub get_directory_contents
     sub get_all_files_and_directories
     {
         my ($directory) = (@_);
+        $directory = File::Spec->rel2abs($directory);
 
         # reset
         @FILES = ();
