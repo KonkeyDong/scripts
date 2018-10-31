@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use feature qw(say);
 use Cwd;
 use Test::Simple tests => 11;
 
@@ -11,6 +12,7 @@ use Utilities;
 test_prompt();
 test_normalize_phrase();
 test_get_directory_contents();
+test_get_all_files_and_directories();
 
 sub test_prompt
 {
@@ -63,6 +65,25 @@ sub test_get_directory_contents
     chdir "..";
     rmdir "foo";
     closedir($DH);
+}
+
+sub test_get_all_files_and_directories
+{
+    # setup
+    mkdir "foo", oct(774);
+    _write_file("foo/bar1.txt");
+    _write_file("foo/bar2.txt");
+    _write_file("foo/bar3.txt");
+    mkdir "foo/inner_foo", oct(774);
+    _write_file("foo/inner_foo_bar1.txt");
+    _write_file("foo/inner_foo_bar2.txt");
+    mkdir "foo/inner_foo/more_inner", oct(774);
+    _write_file("foo/inner_foo/more_inner/example.txt");
+    
+    my ($files, $directories) = Utilities::get_all_files_and_directories("./foo");
+
+    say "hi";
+
 }
 
 sub _write_file
