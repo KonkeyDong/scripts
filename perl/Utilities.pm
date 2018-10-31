@@ -43,4 +43,42 @@ sub get_directory_contents
     return map { File::Spec->rel2abs($_) } @buffer;
 }
 
+{
+    my (@FILES, @DIRECTORIES);
+    sub get_all_files_and_directories
+    {
+        my ($directory) = (@_);
+
+        # reset
+        @FILES = ();
+        @DIRECTORIES = ();
+        _get_all_files_and_directories_helper($directory);
+
+        return \@FILES, \@DIRECTORIES;
+    }
+
+    sub _get_all_files_and_directories_helper
+    {
+        my ($current_dir) = (@_);
+        chdir $current_dir;
+
+        opendir(my $DH, $current_dir) or die "Can't open dir $current_dir: $!\n";
+        foreach my $file (get_directory_contents($DH))
+        {
+            if (-d $file)
+            {
+                push @DIRECTORIES, $file;
+                _get_all_files_and_directories_helper($file);
+                chdir $current_dir;
+            }
+
+            if (-f $file)
+            {
+                push @FILES, $file;
+            }
+        }
+        closedir $DH;
+    }
+}
+
 1;
