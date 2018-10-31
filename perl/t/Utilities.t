@@ -80,10 +80,16 @@ sub test_get_all_files_and_directories
     mkdir "foo/inner_foo/more_inner", oct(774);
     _write_file("foo/inner_foo/more_inner/example.txt");
     
-    my ($files, $directories) = Utilities::get_all_files_and_directories("./foo");
+    my ($files, $directories) = Utilities::get_all_files_and_directories("foo");
+    ok(scalar @{$files} == 6, "Number of files foudn should be 6");
+    ok(scalar @{$directories} == 2, "Number of directories foudn should be 2");
 
-    say "hi";
+    ok($directories->[0] eq '/home/john/scripts/perl/t/foo/inner_foo', "Directory1 should be a full path");
+    ok($directories->[1] eq '/home/john/scripts/perl/t/foo/inner_foo/more_inner', "Directory2 should be a full path");
 
+    # cleanup
+    unlink(@{$files});
+    rmdir $_ foreach(reverse @{$directories});
 }
 
 sub _write_file
