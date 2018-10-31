@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use feature qw(say);
 use Cwd;
-use Test::Simple tests => 11;
+use Test::Simple tests => 16;
 
 use lib "..";
 use Utilities;
@@ -72,24 +72,25 @@ sub test_get_all_files_and_directories
     # setup
     mkdir "foo", oct(774);
     _write_file("foo/bar1.txt");
-    _write_file("foo/bar2.txt");
-    _write_file("foo/bar3.txt");
     mkdir "foo/inner_foo", oct(774);
-    _write_file("foo/inner_foo_bar1.txt");
-    _write_file("foo/inner_foo_bar2.txt");
+    _write_file("foo/inner_foo/inner_foo_bar1.txt");
     mkdir "foo/inner_foo/more_inner", oct(774);
     _write_file("foo/inner_foo/more_inner/example.txt");
     
+    my $current_directory = getcwd;
     my ($files, $directories) = Utilities::get_all_files_and_directories("foo");
-    ok(scalar @{$files} == 6, "Number of files found should be 6");
+    ok(scalar @{$files} == 3, "Number of files found should be 6");
     ok(scalar @{$directories} == 2, "Number of directories found should be 2");
 
-    ok($directories->[0] eq '/home/john/scripts/perl/t/foo/inner_foo', "Directory1 should be a full path");
-    ok($directories->[1] eq '/home/john/scripts/perl/t/foo/inner_foo/more_inner', "Directory2 should be a full path");
+    ok($files->[0] eq "$current_directory/foo/bar1.txt", "File1 should be a full path");
+
+    ok($directories->[0] eq "$current_directory/foo/inner_foo", "Directory1 should be a full path");
+    ok($directories->[1] eq "$current_directory/foo/inner_foo/more_inner", "Directory2 should be a full path");
 
     # cleanup
     unlink(@{$files});
     rmdir $_ foreach(reverse @{$directories});
+    rmdir "$current_directory/foo";
 }
 
 sub _write_file
