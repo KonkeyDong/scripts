@@ -12,7 +12,7 @@ use Utilities;
 test_prompt();
 test_normalize_phrase();
 test_get_directory_contents();
-test_get_all_files_and_directories();
+test_get_tree_contents();
 
 sub test_prompt
 {
@@ -67,7 +67,7 @@ sub test_get_directory_contents
     closedir($DH);
 }
 
-sub test_get_all_files_and_directories
+sub test_get_tree_contents
 {
     # setup
     mkdir "foo", oct(774);
@@ -78,18 +78,18 @@ sub test_get_all_files_and_directories
     _write_file("foo/inner_foo/more_inner/example.txt");
     
     my $current_directory = getcwd;
-    my ($files, $directories) = Utilities::get_all_files_and_directories("foo");
+    my ($files, $directories) = Utilities::get_tree_contents("foo");
     ok(scalar @{$files} == 3, "Number of files found should be 6");
     ok(scalar @{$directories} == 2, "Number of directories found should be 2");
 
     ok($files->[0] eq "$current_directory/foo/bar1.txt", "File1 should be a full path");
 
-    ok($directories->[0] eq "$current_directory/foo/inner_foo", "Directory1 should be a full path");
-    ok($directories->[1] eq "$current_directory/foo/inner_foo/more_inner", "Directory2 should be a full path");
+    ok($directories->[0] eq "$current_directory/foo/inner_foo/more_inner", "Directory1 should be a full path");
+    ok($directories->[1] eq "$current_directory/foo/inner_foo", "Directory2 should be a full path");
 
     # cleanup
     unlink(@{$files});
-    rmdir $_ foreach(reverse @{$directories});
+    rmdir $_ foreach(@{$directories});
     rmdir "$current_directory/foo";
 }
 

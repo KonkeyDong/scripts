@@ -10,37 +10,31 @@ use warnings;
 use feature qw(say);
 use Cwd;
 use FindBin;
+use Parallel::ForkManager;
 
 use lib $FindBin::RealBin;
 use Utilities;
 
 my $directory = shift @ARGV || getcwd;
-shred($directory) if Utilities::prompt("Do you want to shred everything in the directory [$directory]?");
+exit 0 unless Utilities::prompt("Do you want to shred everything in the directory [$directory]?");
 
-say "Finished!";
+my ($FILES, $DIRECTOREIS) = Utilities::get_tree_contents($directory);
+my $pm = Parallel::ForkManager->new(4); # 4 child processes max when dealing shredding on an SSD
 
-sub shred
+SHRED:
+foreach my $file (@{$FILES})
 {
-    my ($current_dir) = (@_);
-    chdir $current_dir;
+    $pm->start and next SHRED; # do the fork
 
-    opendir(my $DH, $current_dir) or die "Can't open dir $current_dir: $!\n";
-    foreach my $file (Utilities::get_directory_contents($DH))
-    {
-        if (-d $file)
-        {
-            shred($file);
-            chdir $current_dir;
-            say "Removing directory $file";
-            rmdir $file or warn "WARNING: Direcotry [$file] is not empty: $!\n";
-        }
+    say "[PID: $$] Shredding file: [$file]";
+    system(qq{/usr/bin/shred -uz "$file"});
 
-        if (-f $file)
-        {
-            say "Shredding file: $file";
-            system(qq{/usr/bin/shred -uzv "$file"});
-        }
-    }
-    closedir $DH;
+    $pm->finish();
 }
 
+$pm->wait_all_children;
+
+say "Removing directories...";
+rmdir $_ foreach(@{$DIRECTOREIS});
+
+exit 0; # success

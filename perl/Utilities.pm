@@ -45,7 +45,7 @@ sub get_directory_contents
 
 {
     my (@FILES, @DIRECTORIES);
-    sub get_all_files_and_directories
+    sub get_tree_contents
     {
         my ($directory) = (@_);
         $directory = File::Spec->rel2abs($directory);
@@ -53,12 +53,12 @@ sub get_directory_contents
         # reset
         @FILES = ();
         @DIRECTORIES = ();
-        _get_all_files_and_directories_helper($directory);
+        _get_tree_contents_helper($directory);
 
         return \@FILES, \@DIRECTORIES;
     }
 
-    sub _get_all_files_and_directories_helper
+    sub _get_tree_contents_helper
     {
         my ($current_dir) = (@_);
         chdir $current_dir;
@@ -68,8 +68,8 @@ sub get_directory_contents
         {
             if (-d $file)
             {
-                push @DIRECTORIES, $file;
-                _get_all_files_and_directories_helper($file);
+                unshift @DIRECTORIES, $file;
+                _get_tree_contents_helper($file);
                 chdir $current_dir;
             }
 
