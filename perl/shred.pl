@@ -11,22 +11,28 @@ use feature qw(say);
 use Cwd;
 use FindBin;
 use Parallel::ForkManager;
+use Getopt::Long;
 
 use lib $FindBin::RealBin;
 use Utilities;
+
+my $options = {};
+GetOptions(
+    "quiet" => $options->{quiet},
+);
 
 my $directory = shift @ARGV || getcwd;
 exit 0 unless Utilities::prompt("Do you want to shred everything in the directory [$directory]?");
 
 my ($FILES, $DIRECTOREIS) = Utilities::get_tree_contents($directory);
-my $pm = Parallel::ForkManager->new(4); # 4 child processes max when dealing shredding on an SSD
+my $pm = Parallel::ForkManager->new(4); # 4 child processes max when dealing with shredding on an SSD
 
 SHRED:
 foreach my $file (@{$FILES})
 {
     $pm->start and next SHRED; # do the fork
 
-    say "[PID: $$] Shredding file: [$file]";
+    say "[PID: $$] Shredding file: [$file]" if $options->{quiet};
     system(qq{/usr/bin/shred -uz "$file"});
 
     $pm->finish();
@@ -34,7 +40,7 @@ foreach my $file (@{$FILES})
 
 $pm->wait_all_children;
 
-say "Removing directories...";
+say "Removing directories..."  if $options->{quiet};
 rmdir $_ foreach(@{$DIRECTOREIS});
 
 exit 0; # success
