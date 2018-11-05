@@ -17,6 +17,7 @@ use lib $FindBin::RealBin;
 use Utilities;
 
 my $options = {};
+$options->{quiet} = 0; # false
 GetOptions(
     "quiet" => $options->{quiet},
 );
@@ -32,7 +33,7 @@ foreach my $file (@{$FILES})
 {
     $pm->start and next SHRED; # do the fork
 
-    say "[PID: $$] Shredding file: [$file]" if $options->{quiet};
+    say "[PID: $$] Shredding file: [$file]" unless $options->{quiet};
     system(qq{/usr/bin/shred -uz "$file"});
 
     $pm->finish();
@@ -40,7 +41,7 @@ foreach my $file (@{$FILES})
 
 $pm->wait_all_children;
 
-say "Removing directories..."  if $options->{quiet};
+say "Removing directories..."  unless $options->{quiet};
 rmdir $_ foreach(@{$DIRECTOREIS});
 
 exit 0; # success
