@@ -1,4 +1,4 @@
-
+require 'byebug'
 
 class MMXPasswordCrack
 
@@ -96,15 +96,15 @@ class MMXPasswordCrack
     end
 
     def other_factor(value, list)
-        return value[0] if event_number_of_trues?(list)
+        return value[0] if even_number_of_trues?(list)
         return value[1]
     end
 
     def number?(number)
-        number.is_a(Numeric)
+        number.is_a?(Numeric)
     end
 
-    def event_number_of_trues?(list)
+    def even_number_of_trues?(list)
         list.count { |item| item }.even?
     end
 end
