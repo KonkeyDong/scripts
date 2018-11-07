@@ -1,4 +1,4 @@
-require 'byebug'
+#require 'byebug'
 
 class MMXPasswordCrack
 
@@ -70,21 +70,80 @@ class MMXPasswordCrack
     # If the result is an array, count the number of trues in the "other" factor.
     # If even, pick the left number. If odd, pick the right number.
     def P1_1
-        code = {
+        data = {
             N: [4, 1],
             X: [2, 7],
             Y: [6, 5],
-            XY: [8, 3]
+            XY: [8, 3],
+            factor: {
+                X: cp_ht,
+                Y: aa_st,
+                other: [cp, fm, lo_ht, sc_ht, sm_st, se_st, helmet, armor, x_buster]
+            }
         }
 
-        value = code[find_factor(cp_ht, aa_st)]
-
-        return value if number?(value)
-        other_factor(value, [cp, fm, lo_ht, sc_ht, sm_st, se_st, helmet, armor, x_buster])
+        calculate_number(data)
     end 
 
+    def P1_2
+        data = {
+            N: [3, 2],
+            X: [7, 8],
+            Y: [4, 1],
+            XY: [6, 5],
+            factor: {
+              X: fm,
+              Y: helmet,
+              other: [aa_ht, bk_ht, cp_ht, fm_ht, lo_ht, sm_ht, sc_ht, se_ht]
+            }
+        }
+
+        calculate_number(data)
+    end
+
+    def P1_3
+        data = {
+            N: 2,
+            X: 4,
+            Y: 6,
+            XY: 7,
+            factor: {
+              X: fm_ht,
+              Y: fm_st
+            }
+        }
+
+        calculate_number(data)
+    end
+
+    def P1_4
+        data = {
+            N: 5,
+            X: 3,
+            Y: 2,
+            XY: 6,
+            factor: {
+              X: se,
+              Y: se_ht
+            }
+        }
+
+        value = data[find_factor(st, st_ht)]
+
+        return value if number?(value)
+    end
+
+    def calculate_number(data)
+        x_factor = data[:factor][:X]
+        y_factor = data[:factor][:Y]
+        value = data[find_factor(x_factor, y_factor)]
+
+        return value if number?(value)
+        other_factor(value, data[:factor][:other])
+    end
+
     # Factors:
-    # N: = neither X or Y are true
+    # N: = neither X and Y are true
     # X: = only X is true
     # Y: = only Y is true
     # XY = both X and Y are true

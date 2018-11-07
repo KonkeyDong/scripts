@@ -35,35 +35,79 @@ describe MMXPasswordCrack do
 
     describe '#P1_1' do
         it 'should return 4 or 1 if nothing is set' do
-            assert_equal @password.P1_1, 4
+            N_factor(:P1_1, 4, 1)
+        end
+
+        it 'should return 2 or 7 if Chill Penguin heart tank is set' do
+            XY_factor(:P1_1, {X: :cp_ht}, 2, 7)
+        end
+
+        it 'should return 6 or 5 if Armored Armadillo sub tank is set' do
+            XY_factor(:P1_1, {Y: :aa_st}, 6, 5)
+        end
+
+        it 'should return 8 or 3 if Chill Penguin heart tank and Armored Armadillo sub tank is set' do
+            XY_factor(:P1_1, {X: :cp_ht, Y: :aa_st}, 8, 3)
+        end
+    end
+
+    describe '#P1_2' do
+        it 'should return 4 or 1 if nothing is set' do
+            assert_equal @password.P1_2, 3
             @password.stub :even_number_of_trues?, false do
-                assert_equal @password.P1_1, 1
+                assert_equal @password.P1_2, 2
             end
         end
 
         it 'should return 2 or 7 if Chill Penguin heart tank is set' do
-            @password.cp_ht = true
-            assert_equal @password.P1_1, 2
+            @password.fm = true
+            assert_equal @password.P1_2, 7
             @password.stub :even_number_of_trues?, false do
-                assert_equal @password.P1_1, 7
+                assert_equal @password.P1_2, 8
             end
         end
 
         it 'should return 6 or 5 if Armored Armadillo sub tank is set' do
-            @password.aa_st = true
-            assert_equal @password.P1_1, 6
+            @password.helmet = true
+            assert_equal @password.P1_2, 4
             @password.stub :even_number_of_trues?, false do
-                assert_equal @password.P1_1, 5
+                assert_equal @password.P1_2, 1
             end
         end
 
         it 'should return 8 or 3 if Chill Penguin heart tank and Armored Armadillo sub tank is set' do
-            @password.cp_ht = true
-            @password.aa_st = true
-            assert_equal @password.P1_1, 8
+            @password.fm = true
+            @password.helmet = true
+            assert_equal @password.P1_2, 6
             @password.stub :even_number_of_trues?, false do
-                assert_equal @password.P1_1, 3
+                assert_equal @password.P1_2, 5
             end
         end
+    end
+
+    def N_factor(method, expected_value, other_value = nil)
+        assert_equal @password.send(method), expected_value
+        other_factor(method, other_value)
+    end
+
+    def XY_factor(method, field, expected_value, other_value = nil)
+        turn_on_field(field[:X])
+        turn_on_field(field[:Y])
+        assert_equal @password.send(method), expected_value
+        other_factor(method, other_value)
+    end
+
+    def other_factor(method, expected_value)
+        return unless expected_value
+
+        @password.stub :even_number_of_trues?, false do
+            assert_equal @password.send(method), expected_value
+        end
+    end
+
+    def turn_on_field(field)
+        return unless field
+
+        @password.send("#{field}=", true)
     end
 end
