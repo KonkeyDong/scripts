@@ -39,7 +39,7 @@ describe MMXPasswordCrack do
 
     describe '#P1_1' do
         it 'should return 4 or 1 if nothing is set' do
-            assert_number(:P1_1, [], 4, 1)
+            assert_number(:P1_1, %i(), 4, 1)
         end
 
         it 'should return 2 or 7 if Chill Penguin heart tank is set' do
@@ -57,7 +57,7 @@ describe MMXPasswordCrack do
 
     describe '#P1_2' do
         it 'should return 3 or 1 if nothing is set' do
-            assert_number(:P1_2, [], 3, 2)
+            assert_number(:P1_2, %i(), 3, 2)
         end
 
         it 'should return 7 or 8 if Flame Mammoth is set' do
@@ -75,7 +75,7 @@ describe MMXPasswordCrack do
 
     describe '#P1_3' do
         it 'should return 2 if nothing is set' do
-            assert_number(:P1_3, [], 2)
+            assert_number(:P1_3, %i(), 2)
         end
 
         it 'should return a 4 if Flame Mammoth heart tank is set' do
@@ -106,6 +106,78 @@ describe MMXPasswordCrack do
 
         it 'should return 6 if Storm Eagle and heart tank are set' do
             assert_number(:P1_4, %i(se se_ht), 6)
+        end
+    end
+
+    describe '#P2_1' do
+        it 'should return 5 or 7 if nothing is set' do
+            assert_number(:P2_1, %i(), 5, 7)
+        end
+
+        it 'should return 3 or 2 if Launch Octopus is set' do
+            assert_number(:P2_1, %i(lo), 3, 2)
+        end
+
+        it 'should return 1 or 8 if Armor is set' do
+            assert_number(:P2_1, %i(armor), 1, 8)
+        end
+
+        it 'should return 6 or 4 if Launch Octopus and Armor are set' do
+            assert_number(:P2_1, %i(lo armor), 6, 4)
+        end
+    end
+
+    describe '#P2_2' do
+        it 'should return 8 or 2 if nothing is set' do
+            assert_number(:P2_2, %i(), 8, 2)
+        end
+
+        it 'should return 4 or 7 if Boomer Kuwanger is set' do
+            assert_number(:P2_2, %i(bk), 4, 7)
+        end
+
+        it 'should return 1 or 3 if Boomer Kuwanger heart tank is set' do
+            assert_number(:P2_2, %i(bk_ht), 1, 3)
+        end
+
+        it 'should return 6 or 5 if Boomer Kuwanger and heart tank are set' do
+            assert_number(:P2_2, %i(bk bk_ht), 6, 5)
+        end
+    end
+
+    describe '#P2_3' do
+        it 'should return 5 or 4 if nothing is set' do
+            assert_number(:P2_3, %i(), 5, 4)
+        end
+
+        it 'should return 8 or 1 if Armored Armadillo is set' do
+            assert_number(:P2_3, %i(aa), 8, 1)
+        end
+
+        it 'should return 3 or 7 if X-Buster is set' do
+            assert_number(:P2_3, %i(x_buster), 3, 7)
+        end
+
+        it 'should return 6 or 2 if Armored Armadillo and X-Buster are set' do
+            assert_number(:P2_3, %i(aa x_buster), 6, 2)
+        end
+    end
+
+    describe '#P2_4' do
+        it 'should return 2 if nothing is set' do
+            assert_number(:P2_4, %i(), 2)
+        end
+
+        it 'should return 6 if Spark Mandrill is set' do
+            assert_number(:P2_4, %i(sm), 6)
+        end
+
+        it 'should return 8 if Sting Chameleon heart tank is set' do
+            assert_number(:P2_4, %i(sc_ht), 8)
+        end
+
+        it 'should return 7 if Spark Mandrill and Sting Chameleon heart tank are set' do
+            assert_number(:P2_4, %i(sm sc_ht), 7)
         end
     end
 

@@ -129,6 +129,69 @@ class MMXPasswordCrack
         calculate_number(data)
     end
 
+    def P2_1
+        data = {
+            N: [5, 7],
+            X: [3, 2],
+            Y: [1, 8],
+            XY: [6, 4],
+            factor: {
+                X: lo,
+                Y: armor,
+                other: [aa, bk, cp, fm, se, aa_ht, bk_ht, aa_st, x_buster]
+            }
+        }
+
+        calculate_number(data)
+    end
+
+    def P2_2
+        data = {
+            N: [8, 2],
+            X: [4, 7],
+            Y: [1, 3],
+            XY: [6, 5],
+            factor: {
+                X: bk,
+                Y: bk_ht,
+                other: [aa_st, fm_st, sm_st, se_st, boots, helmet, armor, x_buster]
+            }
+        }
+
+        calculate_number(data)
+    end
+
+    def P2_3
+        data = {
+            N: [5, 4],
+            X: [8, 1],
+            Y: [3, 7],
+            XY: [6, 2],
+            factor: {
+                X: aa,
+                Y: x_buster,
+                other: [lo, se, cp_ht, fm_ht, se_st, helmet]
+            }
+        }
+
+        calculate_number(data)
+    end
+
+    def P2_4
+        data = {
+            N: 2,
+            X: 6,
+            Y: 8,
+            XY: 7,
+            factor: {
+                X: sm,
+                Y: sc_ht
+            }
+        }
+
+        calculate_number(data)
+    end
+
     def calculate_number(data)
         x_factor = data[:factor][:X]
         y_factor = data[:factor][:Y]
