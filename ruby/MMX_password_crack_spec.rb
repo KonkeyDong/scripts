@@ -3,7 +3,8 @@ require 'minitest/autorun'
 require_relative 'MMX_password_crack'
 
 describe MMXPasswordCrack do
-    before(:each) do
+    before do
+        # reset
         @password = MMXPasswordCrack.new
         @password.bosses
         @password.heart_tanks
@@ -11,12 +12,7 @@ describe MMXPasswordCrack do
         @password.suit_parts
     end
 
-    describe '#number?, #even_number_of_trues?, #other_factor, #find_factor' do
-        it 'should return true if a number' do
-            assert_equal @password.number?(1), true
-            assert_equal @password.number?(Array.new), false
-        end
-
+    describe '#even_number_of_trues?, #other_factor, #find_factor' do
         it 'should return true if an array of boolean has an even number' do
             assert_equal @password.even_number_of_trues?([false, false]), true
             assert_equal @password.even_number_of_trues?([false, true]), false
@@ -253,6 +249,57 @@ describe MMXPasswordCrack do
         end
     end
 
+    describe 'Test other factor fields' do
+        describe '#P1_1' do
+            let(:states) { %i(cp fm lo_ht sc_ht sm_st se_st helmet armor x_buster) }
+            it do
+                assert_other_factors(:P1_1, states, 1)
+            end
+        end
+
+        describe '#P1_2' do
+            let(:states) { %i(aa_ht bk_ht cp_ht fm_ht lo_ht sm_ht sc_ht se_ht) }
+            it do
+                assert_other_factors(:P1_2, states, 2)
+            end
+        end
+
+        describe '#P2_1' do
+            let(:states) { %i(aa bk cp fm se aa_ht bk_ht aa_st x_buster) }
+            it do
+                assert_other_factors(:P2_1, states, 7)
+            end
+        end
+
+        describe '#P2_2' do
+            let(:states) { %i(aa_st fm_st sm_st se_st boots helmet armor x_buster) }
+            it do
+                assert_other_factors(:P2_2, states, 2)
+            end
+        end
+
+        describe '#P2_3' do
+            let(:states) { %i(lo se cp_ht fm_ht se_st helmet) }
+            it do
+                assert_other_factors(:P2_3, states, 4)
+            end
+        end
+
+        describe '#P3_1' do
+            let(:states) { %i(aa bk bk_ht cp_ht fm_ht lo_ht sc_ht sm_st armor) }
+            it do
+                assert_other_factors(:P3_1, states, 8)
+            end
+        end
+
+        describe '#P3_3' do
+            let(:states) { %i(aa bk cp fm lo sm sc se) }
+            it do
+                assert_other_factors(:P3_3, states, 6)
+            end
+        end
+    end
+
     def assert_number(method, fields, expected_value, other_value = nil)
         turn_on_fields(fields)
         assert_equal @password.send(method), expected_value
@@ -267,7 +314,23 @@ describe MMXPasswordCrack do
         end
     end
 
+    def assert_other_factors(method, list, expected_value)
+        list.each { |state| 
+            turn_on_fields([state])
+            assert_equal @password.send(method), expected_value
+            turn_off_fields([state])
+        }
+    end
+
     def turn_on_fields(fields)
-        fields.each { |field| @password.send("#{field}=", true) }
+        toggle_fields(fields, true)
+    end
+
+    def turn_off_fields(fields)
+        toggle_fields(fields, false)
+    end
+
+    def toggle_fields(fields, value)
+        fields.each { |field| @password.send("#{field}=", value) }
     end
 end
