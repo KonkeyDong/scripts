@@ -192,12 +192,74 @@ class MMXPasswordCrack
         calculate_number(data)
     end
 
+    def P3_1
+        data = {
+            N: [1, 8],
+            X: [4, 6],
+            Y: [3, 7],
+            XY: [2, 5],
+            factor: {
+                X: aa_ht,
+                Y: boots,
+                other: [aa, bk, bk_ht, cp_ht, fm_ht, lo_ht, sc_ht, sm_st, armor]
+            }
+        }
+
+        calculate_number(data)
+    end
+
+    def P3_2
+        data = {
+            N: 8,
+            X: 3,
+            Y: 2,
+            XY: 1,
+            factor: {
+                X: sc,
+                Y: se_st
+            }
+        }
+
+        calculate_number(data)
+    end
+
+    def P3_3
+        data = {
+            N: [2, 6],
+            X: [8, 7],
+            Y: [5, 3],
+            XY: [4, 1],
+            factor: {
+                X: lo_ht,
+                Y: sm_st,
+                other: [aa, bk, cp, fm, lo, sm, sc, se]
+            }
+        }
+
+        calculate_number(data)
+    end
+
+    def P3_4
+        data = {
+            N: 1,
+            X: 4,
+            Y: 6,
+            XY: 8,
+            factor: {
+                X: cp,
+                Y: sm_ht
+            }
+        }
+
+        calculate_number(data)
+    end
+
     def calculate_number(data)
         x_factor = data[:factor][:X]
         y_factor = data[:factor][:Y]
         value = data[find_factor(x_factor, y_factor)]
 
-        return value if number?(value)
+        return value if value.is_a?(Numeric)
         other_factor(value, data[:factor][:other])
     end
 
@@ -216,10 +278,6 @@ class MMXPasswordCrack
     def other_factor(value, list)
         return value[0] if even_number_of_trues?(list)
         return value[1]
-    end
-
-    def number?(number)
-        number.is_a?(Numeric)
     end
 
     def even_number_of_trues?(list)
