@@ -1,5 +1,3 @@
-#require 'byebug'
-
 class MMXPasswordCrack
 
     attr_accessor :cp, :se, :fm, :sm, :aa, :lo, :bk, :sc,
@@ -128,9 +126,7 @@ class MMXPasswordCrack
             }
         }
 
-        value = data[find_factor(st, st_ht)]
-
-        return value if number?(value)
+        calculate_number(data)
     end
 
     def calculate_number(data)
