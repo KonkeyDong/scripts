@@ -3,7 +3,7 @@ require 'byebug'
 require 'nokogiri'
 require 'ap'
 require 'open-uri'
-require 'fileutils'
+require 'forkmanager'
 
 class Scrape
   attr_accessor :album, :number_of_songs, :bad_songs
@@ -20,14 +20,21 @@ class Scrape
 
   def download
     return if check_number_of_songs_found
+
+    pm = Parallel::ForkManager.new(30) # 30 = max procs
+
     FileUtils.mkdir_p @album
-    i = 1
     pre_download.each do |data|
-      puts "Now downloading: [#{data[:title]} (#{i} of #{@number_of_songs})]"
-      i += 1 # ruby doesn't like i++...
+      pm.start(data) && next # blocks until new fork slot is available
+
+      puts "Now downloading: [#{data[:title]}]"
       file_url = Nokogiri::HTML(open(data[:url])).xpath('//audio').first.attributes["src"].value
       IO.copy_stream(open(file_url), "./#{@album}/#{data[:title]}")
+
+      pm.finish(0)
     end
+
+    pm.wait_all_children
   end
 
   private
@@ -92,20 +99,3 @@ class Scrape
 
 end
 
-error_buffer = []
-file_name = "url_list.txt"
-
-File.open(file_name, 'r') do |file|
-  file.each do |line|
-    line = line.chomp
-    puts
-    puts "Now downloading: [#{line}]"
-    data = Scrape.new(line)
-    data.download
-
-    error_buffer.push(line) if data.bad_songs
-  end
-end
-
-IO.write(file_name, error_buffer.join("\n")) if error_buffer
-puts 'Complete!'
