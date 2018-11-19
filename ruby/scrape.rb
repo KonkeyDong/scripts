@@ -8,13 +8,14 @@ require 'forkmanager'
 class Scrape
   attr_accessor :album, :number_of_songs, :bad_songs
 
-  def initialize(url)
+  def initialize(url, add_track_numbers = false)
     @url = url
     @html = Nokogiri::HTML(open(@url))
     @album = get_album_name
     @number_of_songs = get_number_of_songs.to_i
     @songlist = @html.xpath('//table[@id="songlist"]/tr/td[@class="clickable-row"]')
     @bad_songs = false
+    @add_track_numbers = add_track_numbers
   end
 
   def download
@@ -46,6 +47,8 @@ class Scrape
       next if @songlist[i].text =~ /\d+\.\d+\s[MK]B/i # song size
 
       song = @songlist[i].text
+              .gsub('[', '(')
+              .gsub(']', ')')
               .gsub("'", '')
               .gsub('-', ' ')
               .gsub(/\s+/, '_')
@@ -60,7 +63,11 @@ class Scrape
       )
     end
 
-    data = add_track_numbers(data) unless has_track_numbers?(data)
+    if @add_track_numbers
+      data = add_track_numbers(data)
+    else
+      data = add_track_numbers(data) unless has_track_numbers?(data)
+    end
 
     return data
   end
