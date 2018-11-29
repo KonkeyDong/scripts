@@ -16,17 +16,23 @@ use Getopt::Long;
 use lib $FindBin::RealBin;
 use Utilities;
 
-my $options = {};
-$options->{quiet} = 0; # false
+my $options = ();
+$options->{num_thread} = 4; # default
 GetOptions(
-    "quiet" => $options->{quiet},
+    $options,
+    "quiet",
+    "num_thread=i"
 );
+
+# never tested this, but I'm assuming external HDDs might not want more than 1 proc for shredding anyway.
+die "Number of threads greater than four could be slower when shredding an HDD. Aborting..." if $options->{num_thread} > 4;
 
 my $directory = shift @ARGV || getcwd;
 exit 0 unless Utilities::prompt("Do you want to shred everything in the directory [$directory]?");
 
 my ($FILES, $DIRECTOREIS) = Utilities::get_tree_contents($directory);
-my $pm = Parallel::ForkManager->new(4); # 4 child processes max when dealing with shredding on an SSD
+
+my $pm = Parallel::ForkManager->new($options->{num_thread}); # 4 child processes max when dealing with shredding on an SSD
 
 SHRED:
 foreach my $file (@{$FILES})
