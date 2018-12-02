@@ -1,7 +1,7 @@
 require 'byebug'
 require 'fileutils'
 require 'ap'
-require_relative 'scrape'
+require_relative '../Classes/KHInsider'
 
 def exit_error
     STDERR.puts "Missing a file path for the first argument! Aborting..."
@@ -18,7 +18,7 @@ File.open(file_name, 'r') do |file|
     line = line.chomp
     puts
     puts "Now downloading: [#{line}]"
-    data = Scrape.new(line)
+    data = KHInsider.new(line)
     data.download
 
     error_buffer.push(line) if data.bad_songs

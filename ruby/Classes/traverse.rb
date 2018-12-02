@@ -9,16 +9,18 @@ class Traverse
 
   # get directory contents without "." and ".." (non-recursive)
   def get_directory_contents(directory)
+    exists?(directory)
+
     Dir.entries(directory)
        .reject { |file| file =~ /^\.{1,2}$/ }
        .map { |file| File.realpath(file) }
   rescue SystemCallError => e
-    STDERR.puts e
-    STDERR.puts "Dir path: #{directory}"
-    exit 1
+    bad_directory(e)
   end
 
   def traverse_directories(directory)
+    exists?(directory)
+
     directory = File.realpath(directory)
 
     # reset
@@ -27,6 +29,8 @@ class Traverse
 
     traverse_directories_helper(directory)
     return nil
+  rescue SystemCallError => e
+    bad_directory(e)
   end
 
   private
@@ -43,6 +47,14 @@ class Traverse
 
       @files.push(file) if File.file?(file)
     end
+  end
+
+  def exists?(directory)
+    raise SystemCallError "Bad directory: #{directory}" unless File.directory?(directory)
+  rescue SystemCallError => e
+    STDERR.puts e
+    STDERR.puts "Dir path: #{directory}"
+    exit 1
   end
 end
 

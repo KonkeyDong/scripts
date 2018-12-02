@@ -5,7 +5,7 @@ require 'ap'
 require 'open-uri'
 require 'forkmanager'
 
-class Scrape
+class KHInsider
   attr_accessor :album, :number_of_songs, :bad_songs
 
   def initialize(url, add_track_numbers = false)
