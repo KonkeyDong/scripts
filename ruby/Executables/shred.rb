@@ -6,7 +6,7 @@ require_relative '../Classes/traverse'
 
 # TODO: add cmd options for num_threads
 options = {
-    num_threads: 1
+    num_threads: 4
 }
 
 getopts = GetoptLong.new(
