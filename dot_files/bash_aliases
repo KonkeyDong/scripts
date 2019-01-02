@@ -6,7 +6,7 @@ alias jalv="vim ${ALIAS_FILE}"
 alias jall="less ${ALIAS_FILE}"
 
 # update system & auto remove old junk
-alias update='sudo apt update -y && sudo apt upgrade -y sudo apt autoremove'
+alias update='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove'
 
 alias groot="cd ${GIT_BASE}"
 alias gscripts="cd ${GIT_BASE}/scripts"
