@@ -1,4 +1,6 @@
+# Change this location to your git folder root
+GIT_BASE=~/git_projects
+
 ALIAS_FILE=~/.bash_aliases
 BASH_RC=~/.bashrc
-GIT_BASE=~/git_projects
 DOT_FILES_BASE=${GIT_BASE}/scripts/dot_files

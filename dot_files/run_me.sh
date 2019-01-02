@@ -1,4 +1,4 @@
-source config.sh
+source ${CONFIG} || config.txt
 
 # add symbol link to aliases
 if [[ ! -L ${ALIAS_FILE} ]]

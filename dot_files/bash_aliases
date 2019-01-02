@@ -1,4 +1,4 @@
-source config.sh
+source ${CONFIG} || config.txt
 
 # dealing with the alias file itself
 alias jal="source ${BASH_RC}" # re-source
