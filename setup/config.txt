@@ -1,0 +1,18 @@
+# Change this location to your git folder root
+GIT_BASE=~/git_projects
+
+GIT_DOT_FILES=${GIT_BASE}/scripts/dot_files
+GIT_BASH_ALIASES=${GIT_DOT_FILES}/.bash_aliases
+GIT_BASH_RC=${GIT_DOT_FILES}/.bashrc
+
+GIT_CONFIG=${GIT_BASE}/.config
+GIT_NVIM_DIR=${GIT_CONFIG}/nvim
+GIT_RANGER_DIR=${GIT_CONFIG}/ranger
+
+# files
+BASH_ALIASES=~/.bash_aliases
+BASH_RC=~/.bashrc
+
+# directories
+NVIM_DIR=~/.config/nvim
+RANGER_DIR=~/.config/ranger
