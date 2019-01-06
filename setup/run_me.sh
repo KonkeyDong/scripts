@@ -29,8 +29,9 @@ function symbolic_link()
 # add symbol links
 symbolic_link ${GIT_BASH_ALIASES} ${BASH_ALIASES}
 symbolic_link ${GIT_BASH_RC} ${BASH_RC}
-cp -r ${GIT_NVIM_DIR} ${CONFIG_DIR}
-cp -r ${GIT_RANGER_DIR} ${CONFIG_DIR}
+
+mkdir -p ~/.config
+cp -r ${GIT_CONFIG_DIR} ${CONFIG_DIR}
 
 # add aliases
 source ${BASH_RC}
