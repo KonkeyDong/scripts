@@ -5,7 +5,7 @@ GIT_DOT_FILES=${GIT_BASE}/scripts/dot_files
 GIT_BASH_ALIASES=${GIT_DOT_FILES}/.bash_aliases
 GIT_BASH_RC=${GIT_DOT_FILES}/.bashrc
 
-GIT_CONFIG_DIR=${GIT_BASE}/config
+GIT_CONFIG_DIR=${GIT_BASE}/scripts/config
 
 # files
 BASH_ALIASES=~/.bash_aliases
