@@ -14,5 +14,4 @@ BASH_ALIASES=~/.bash_aliases
 BASH_RC=~/.bashrc
 
 # directories
-NVIM_DIR=~/.config/nvim
-RANGER_DIR=~/.config/ranger
+CONFIG_DIR=~/.config
