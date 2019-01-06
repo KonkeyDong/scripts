@@ -32,7 +32,7 @@ symbolic_link ${GIT_BASH_RC} ${BASH_RC}
 
 echo "Creating .config directory ..."
 mkdir -p ~/.config
-cp -r ${GIT_CONFIG_DIR} ${CONFIG_DIR}
+cp -r ${GIT_CONFIG_DIR}/* ${CONFIG_DIR}
 
 # add aliases
 source ${BASH_RC}
