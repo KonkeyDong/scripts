@@ -30,6 +30,7 @@ function symbolic_link()
 symbolic_link ${GIT_BASH_ALIASES} ${BASH_ALIASES}
 symbolic_link ${GIT_BASH_RC} ${BASH_RC}
 
+echo "Creating .config directory ..."
 mkdir -p ~/.config
 cp -r ${GIT_CONFIG_DIR} ${CONFIG_DIR}
 
