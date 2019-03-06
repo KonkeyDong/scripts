@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install useful programs
-sudo apt install neovim ntfs-3g youtube-dl curl ranger vlc -y
+sudo apt install neovim ntfs-3g youtube-dl curl ranger vlc ruby -y
 
 source ${CONFIG} || source config.txt
 

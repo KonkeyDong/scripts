@@ -2,8 +2,8 @@ source ${CONFIG} || source config.txt
 
 # dealing with the alias file itself
 alias jal="source ${BASH_RC}" # re-source
-alias jalv="vim ${ALIAS_FILE}"
-alias jall="less ${ALIAS_FILE}"
+alias jalv="vim ${BASH_ALIASES}"
+alias jall="less ${BASH_ALIASES}"
 
 # update system & auto remove old junk
 alias update='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove'
