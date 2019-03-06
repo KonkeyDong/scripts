@@ -7,3 +7,9 @@ run:
 $ git config --global user.name "<username>"
 $ git config --global user.email "<email@address>"
 ```
+
+For ruby byebug,
+```
+apt install ruby-dev
+gem install byebug
+```
