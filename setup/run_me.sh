@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install useful programs
-sudo apt install neovim ntfs-3g youtube-dl curl ranger vlc ruby ruby-dev steam keepass2 -y
+sudo apt install neovim ntfs-3g youtube-dl curl ranger vlc ruby ruby-dev steam keepass2 zsh -y
 
 # useful ruby gems. required for the parallel shred command
 sudo gem install byebug parallel-forkmanager
