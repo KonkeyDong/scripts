@@ -43,5 +43,3 @@ cp -r ${GIT_CONFIG_DIR}/* ${CONFIG_DIR}
 # add aliases
 source ${BASH_RC}
 
-# install pia (file should be committed)
-bash ./installs/pia-linux-1.1.1-02545.run
