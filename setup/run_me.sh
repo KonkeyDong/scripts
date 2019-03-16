@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install useful programs
-sudo apt install neovim ntfs-3g youtube-dl curl ranger vlc ruby ruby-dev -y
+sudo apt install neovim ntfs-3g youtube-dl curl ranger vlc ruby ruby-dev steam keepass2 -y
 
 # useful ruby gems. required for the parallel shred command
 sudo gem install byebug parallel-forkmanager
@@ -42,3 +42,6 @@ cp -r ${GIT_CONFIG_DIR}/* ${CONFIG_DIR}
 
 # add aliases
 source ${BASH_RC}
+
+# install pia (file should be committed)
+bash ./installs/pia-linux-1.1.1-02545.run
