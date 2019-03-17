@@ -1,7 +1,8 @@
 # SSH "Connection Refused"
-Reason: As of November 2016 release, Raspbian has the SSH server disabled by default. You will have to enable it manually.
+#### Reason: 
+As of November 2016 release, Raspbian has the SSH server disabled by default. You will have to enable it manually.
 
-Solution: 
+#### Solution:
 `sudo raspi-config` >> interface options >> enable or disable ssh server >> enable
 
 # UK to US Keyboard Layout
@@ -30,7 +31,7 @@ To find your gateway:
 
 Use the `eth0` Iface.
 
-reboot machine to take effect.
+reboot machine to take effect: `sudo shutdown --reboot now`
 
 # Mount <device> <destination> wrong fs type, bad option, bad superblock error
 

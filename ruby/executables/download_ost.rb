@@ -1,7 +1,7 @@
 require 'byebug'
 require 'fileutils'
 require 'ap'
-require_relative '../Classes/KHInsider'
+require_relative '../classes/KHInsider'
 
 def exit_error
     STDERR.puts "Missing a file path for the first argument! Aborting..."

@@ -3,8 +3,8 @@
 require 'byebug'
 require 'forkmanager'
 require 'getoptlong'
-require_relative '../Classes/utilities'
-require_relative '../Classes/traverse'
+require_relative '../classes/utilities'
+require_relative '../classes/traverse'
 
 options = {
     num_threads: 4
