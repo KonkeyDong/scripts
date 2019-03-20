@@ -9,7 +9,7 @@ sudo apt install neovim ntfs-3g youtube-dl curl ranger vlc ruby ruby-dev keepass
 # useful ruby gems. required for the parallel shred command
 sudo gem install byebug parallel-forkmanager
 
-Notes on parallel-forkmanager:
+#Notes on parallel-forkmanager:
 # https://www.rubydoc.info/gems/parallel-forkmanager/1.5.1/Parallel/ForkManager
 
 source ${CONFIG} || source config.txt
