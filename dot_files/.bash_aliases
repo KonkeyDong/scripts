@@ -23,3 +23,8 @@ alias sqlstudio=sqlitestudio
 alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
 alias YT="youtube-viewer"
+
+# Sony Vaio
+alias lights_on='echo 1 | sudo tee /sys/devices/platform/sony-laptop/kbd_backlight'
+alias lights_off='echo 0 | sudo tee /sys/devices/platform/sony-laptop/kbd_backlight'
+
