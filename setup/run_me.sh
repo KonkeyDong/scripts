@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install useful programs
-sudo apt install neovim ntfs-3g youtube-dl curl ranger vlc ruby ruby-dev keepass2 zsh -y
+sudo apt install neovim ntfs-3g youtube-dl curl ranger vlc ruby ruby-dev build-essential keepass2 zsh -y
 
 # Note: to install ruby byebug and parallel-forkmanager,
 #       you need to install ruby and ruby-dev!
