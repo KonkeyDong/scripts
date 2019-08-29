@@ -2,7 +2,7 @@
 1. `mkdir -p ~/git_projects`
 1. `cd ~/git_projects`
 1. `git clone https://github.com/KonkeyDong/scripts.git`
-1. `cd setup`
+1. `cd ~/git_projects/setup`
 1. `bash run_me.sh`
 
 ### Notes:
