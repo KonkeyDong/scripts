@@ -43,6 +43,8 @@ echo "Copying config directory ..."
 mkdir -p ~/.config
 cp -r ${GIT_CONFIG_DIR}/* ${CONFIG_DIR}
 
+echo "run [download_vscode.sh] to download VS Code separetly.
+
 # add aliases
 source ${BASH_RC}
 
