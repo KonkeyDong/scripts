@@ -28,3 +28,5 @@ alias YT="youtube-viewer"
 alias lights_on='echo 1 | sudo tee /sys/devices/platform/sony-laptop/kbd_backlight'
 alias lights_off='echo 0 | sudo tee /sys/devices/platform/sony-laptop/kbd_backlight'
 
+# PI ssh
+alias pissh='ssh pi@192.168.1.81'
