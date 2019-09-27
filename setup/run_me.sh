@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # install useful programs
-sudo apt install neovim ntfs-3g youtube-dl curl ranger vlc ruby ruby-dev build-essential keepass2 zsh -y
+sudo apt install neovim ntfs-3g youtube-dl curl ranger vlc ruby ruby-dev build-essential keepass2 zsh zlib1g-dev liblzma-dev -y
 
 # Note: to install ruby byebug and parallel-forkmanager,
 #       you need to install ruby and ruby-dev!
 
 # useful ruby gems. required for the parallel shred command
-sudo gem install byebug parallel-forkmanager bundle
+sudo gem install byebug parallel-forkmanager bundle ap crack nokogiri
 
 #Notes on parallel-forkmanager:
 # https://www.rubydoc.info/gems/parallel-forkmanager/1.5.1/Parallel/ForkManager
