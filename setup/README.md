@@ -29,6 +29,34 @@ I assume the new disk shows in your file manager and can be mounted by clicking 
 1. Change ownership: `sudo chown -R <user>:<group> /media/name_of_your_mount_point`
 (See [this post](https://forums.linuxmint.com/viewtopic.php?p=1251135#p1251135) for the steps outlined above, if needed.)
 
+---
+
+#### Install & Enable SSH Server
+```bash
+sudo apt install openssh-server
+sudo systemctl enable ssh
+sudo systemctl start ssh
+```
+
+See [this link](https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/) for reference.
+
+---
+
+#### Generate SSH Key Pair
+```bash
+mkdir -p ~/.ssh
+ssh-keygen -t rsa
+```
+
+Leave the file name as the default: `id_rsa`. Enter a passphrase, if you desire.
+
+Cat and copy your local machine's id_rsa.pub file and send/paste that to a remote computer you want connection with. Place the *.pub file's contents inside of `~/.ssh/authorized_keys` on its very own line (usually at the very bottom). 
+You may desire having your remote computer have ssh connection to your local machine. The steps are the exact same, but from the remote machine to your local machine.
+
+See [this link](https://www.siteground.com/kb/generate_ssh_key_in_linux/) for reference.
+
+---
+
 #### VS Code Extensions
 1. Markdown Preview Enhanced by Yiyi Wang (**Ctrl + k v** to display markdown in separate pane)
 1. markdownlint by David Anson
