@@ -9,11 +9,15 @@
 
 #### [Markdown File Documentation](https://guides.github.com/features/mastering-markdown/)
 
+---
+
 #### Setting Up Git Account:
 ```
 $ git config --global user.name "<username>"
 $ git config --global user.email "<email@address>"
 ```
+
+---
 
 #### Fixing "No permission on mounted HDD"
 I assume the new disk shows in your file manager and can be mounted by clicking on it, correct?
