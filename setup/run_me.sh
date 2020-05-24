@@ -44,6 +44,7 @@ mkdir -p ~/.config
 cp -r ${GIT_CONFIG_DIR}/* ${CONFIG_DIR}
 
 echo "run [download_vscode.sh] to download VS Code separetly."
+echo "run [download_joplin.sh] to download Joplin separetely."
 
 # add aliases
 source ${BASH_RC}
