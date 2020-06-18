@@ -18,7 +18,7 @@ def download(data, format, path, options)
         full_path = "#{hdd_destination}/#{path}/#{directory_name}"
 
         #FileUtils.makedirs full_path
-        system("#{youtube_dl} --format #{format} '#{url}' -o '#{full_path}/%(title)s.%(ext)s' #{options[:number_of_downloads]}")
+        system("#{youtube_dl} --format #{format} '#{url}' -o '#{full_path}/%(title)s.%(ext)s' #{options[:number_of_downloads]} -r 1m")
         #system("#{youtube_dl} --format #{format} '#{url}' -o '#{full_path}/%(title)s.%(ext)s'")
     end
 end
@@ -94,6 +94,7 @@ OptionParser.new do |opts|
 
     opts.on('-nSTRING' || '-n STRING', '--number-of-downloads STRING' || '--number-of-downloads=STRING') do |number|
         options[:number_of_downloads] = "--max-downloads #{number}"
+        puts "Number of MAX downloads set to #{number}"
     end
 
     opts.on('-s', '--select') do
