@@ -36,7 +36,15 @@ AUDIO = [
     ["https://www.youtube.com/watch?v=_qpzcOQE8qI&list=PLwwfs0zUhl7RLr6AqAghsANrs-7BsWFJO", "sandman/prostitution"],
     ["https://www.youtube.com/watch?v=IhljAMQxS6A&list=PLwwfs0zUhl7QXxZQVOrnDZAoZ2mEpOXH7", "sandman/mgtow_movies"],
     ["https://www.youtube.com/watch?v=2hZbQg43nKc&list=PLwwfs0zUhl7Sb77ntGQJIysssNlZkzbjp", "sandman/book_reviews"],
-    ["https://www.youtube.com/watch?v=fXbpqLzacZY&list=PLwwfs0zUhl7Qc0OJn22BearDO5Jjgsbok", "sandman/a_god_among_mgtow"]
+    ["https://www.youtube.com/watch?v=fXbpqLzacZY&list=PLwwfs0zUhl7Qc0OJn22BearDO5Jjgsbok", "sandman/a_god_among_mgtow"],
+    ["https://www.youtube.com/watch?v=fXbpqLzacZY&list=PLwwfs0zUhl7Qc0OJn22BearDO5Jjgsbok", "sandman/a_god_among_mgtow"],
+
+    # Better Ideas
+    ["https://www.youtube.com/channel/UCtUId5WFnN82GdDy7DgaQ7w/videos", "better_ideas"],
+
+    ["https://www.youtube.com/channel/UCc7-Rr-wSO530znK2ny05JQ/videos", "donovan_sharpe"],
+    ["https://www.youtube.com/channel/UCHFqcgpUuyOGSsG5N3_N0sA/videos", "strong_successful_male"],
+
 ]
 
 # --format bestvideo
@@ -54,5 +62,6 @@ VIDEO = [
     ["https://www.youtube.com/watch?v=MpToEILMnA4&list=PLIBtb_NuIJ1w6yO4w6l6uevneVX9qDh7_", "prager_u/race_relations"],
     ["https://www.youtube.com/watch?v=FDwCuz4WUi4&list=PLIBtb_NuIJ1w_5qAEs5cSUJ5Bk0R8QLaY", "prager_u/economics"],
     ["https://www.youtube.com/watch?v=giNJwXiktZ0&list=PLIBtb_NuIJ1zeuQ51NrTz7gMt0q89c8wK", "prager_u/welcome_to_prager_u"],
+    ["https://www.youtube.com/c/markdice/videos", "mark_dice"],
 ]
 
