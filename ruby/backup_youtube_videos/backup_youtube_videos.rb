@@ -18,7 +18,7 @@ def download(data, format, path, options)
         full_path = "#{hdd_destination}/#{path}/#{directory_name}"
 
         #FileUtils.makedirs full_path
-        system("#{youtube_dl} --format #{format} '#{url}' -o '#{full_path}/%(title)s.%(ext)s' #{options[:number_of_downloads]} -r 1m")
+        system("#{youtube_dl} --format #{format} '#{url}' -o '#{full_path}/%(upload_date)s_%(title)s.%(ext)s' #{options[:number_of_downloads]} #{options[:download_speed]} --restrict-filenames")
         #system("#{youtube_dl} --format #{format} '#{url}' -o '#{full_path}/%(title)s.%(ext)s'")
     end
 end
@@ -77,13 +77,17 @@ def help
         -n, --number-of-downloads <number> : Set the MAX number of downloads.
         -s, --select                       : Select a specific url to download its entire library.
                                                 Exit upon completion.
+
+        -u, --no-download-speed-throttle   : Removes the default 1 MB/second throttle.
+                                                (Careful not to get banned!!)
     HEREDOC
 
     puts heredoc
 end
 
 options = {
-    number_of_downloads: ''
+    number_of_downloads: '',
+    download_speed: '-r 1m', # 1 MB download/second MAX default
 }
 
 OptionParser.new do |opts|
@@ -97,8 +101,15 @@ OptionParser.new do |opts|
         puts "Number of MAX downloads set to #{number}"
     end
 
+    opts.on('-u', '--no-download-speed-throttle') do
+        options[:download_speed] = ''
+        puts "Download speed NOT throttled"
+    end
+
     opts.on('-s', '--select') do
+        s = Stopwatch.new
         select_specific_download(AUDIO, VIDEO, options)
+        s.elapsed_time
         exit 0
     end
 
