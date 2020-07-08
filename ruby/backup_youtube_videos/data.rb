@@ -6,7 +6,7 @@
 
 # --format bestaudio
 AUDIO = [
-    ["https://www.youtube.com/user/AaronClarey/videos", "aaron_clarey"],
+    # ["https://www.youtube.com/user/AaronClarey/videos", "aaron_clarey"],
     ["https://www.youtube.com/user/artofmanliness/videos", "art_of_manliness"],
     ["https://www.youtube.com/channel/UC5tEELgWBfKbA9fVPRzBzPQ/videos", "coach_red_pill"],
     ["https://www.youtube.com/watch?v=T5yyHZwTOpA&list=PLIBtb_NuIJ1wCrBmN2Z3jcQ4vvmOEi-7-", "prager_u/fireside_chat"],
@@ -37,31 +37,30 @@ AUDIO = [
     ["https://www.youtube.com/watch?v=IhljAMQxS6A&list=PLwwfs0zUhl7QXxZQVOrnDZAoZ2mEpOXH7", "sandman/mgtow_movies"],
     ["https://www.youtube.com/watch?v=2hZbQg43nKc&list=PLwwfs0zUhl7Sb77ntGQJIysssNlZkzbjp", "sandman/book_reviews"],
     ["https://www.youtube.com/watch?v=fXbpqLzacZY&list=PLwwfs0zUhl7Qc0OJn22BearDO5Jjgsbok", "sandman/a_god_among_mgtow"],
-    ["https://www.youtube.com/watch?v=fXbpqLzacZY&list=PLwwfs0zUhl7Qc0OJn22BearDO5Jjgsbok", "sandman/a_god_among_mgtow"],
 
     # Better Ideas
     ["https://www.youtube.com/channel/UCtUId5WFnN82GdDy7DgaQ7w/videos", "better_ideas"],
 
     ["https://www.youtube.com/channel/UCc7-Rr-wSO530znK2ny05JQ/videos", "donovan_sharpe"],
     ["https://www.youtube.com/channel/UCHFqcgpUuyOGSsG5N3_N0sA/videos", "strong_successful_male"],
-
 ]
 
 # --format bestvideo
 VIDEO = [
-    ["https://www.youtube.com/channel/UCZmkvHLQu76lYbW1w9FoGzQ/videos", "larry_elder"],
+   ["https://www.youtube.com/channel/UCZmkvHLQu76lYbW1w9FoGzQ/videos", "larry_elder"],
 
-    # Prager U
-    ["https://www.youtube.com/watch?v=K_yS0X5s0lo&list=PLIBtb_NuIJ1xS4y2x3jS2dpnpuLwokgtS", "prager_u/history"],
-    ["https://www.youtube.com/watch?v=qVJAwqxagJs&list=PLIBtb_NuIJ1zF8AdDYs28tR3jfjIwyCpr", "prager_u/bonus_videos"],
-    ["https://www.youtube.com/watch?v=yBX-9eUtwzU&list=PLIBtb_NuIJ1w9rrlXRueM3opfoV0rUenS", "prager_u/religion_and_philosophy"],
-    ["https://www.youtube.com/watch?v=0X99PQEOk-w&list=PLIBtb_NuIJ1wK13RCWLFaVbzRyrER8wEQ", "prager_u/foreign_affairs"],
-    ["https://www.youtube.com/watch?v=SBnyEupyNB8&list=PLIBtb_NuIJ1w9GVrOrzMZbwU7Li6TAT91", "prager_u/life_studies"],
-    ["https://www.youtube.com/watch?v=DUyUpkQpMEw&list=PLIBtb_NuIJ1zs1gI2nYdZk6wL606nGOQ9", "prager_u/political_science"],
-    ["https://www.youtube.com/watch?v=qZN2jt2cCU4&list=PLIBtb_NuIJ1zpyK6kNR-xPfszMD_uDsEU", "prager_u/environmental_science"],
-    ["https://www.youtube.com/watch?v=MpToEILMnA4&list=PLIBtb_NuIJ1w6yO4w6l6uevneVX9qDh7_", "prager_u/race_relations"],
-    ["https://www.youtube.com/watch?v=FDwCuz4WUi4&list=PLIBtb_NuIJ1w_5qAEs5cSUJ5Bk0R8QLaY", "prager_u/economics"],
-    ["https://www.youtube.com/watch?v=giNJwXiktZ0&list=PLIBtb_NuIJ1zeuQ51NrTz7gMt0q89c8wK", "prager_u/welcome_to_prager_u"],
-    ["https://www.youtube.com/c/markdice/videos", "mark_dice"],
+   # Prager U
+   ["https://www.youtube.com/watch?v=K_yS0X5s0lo&list=PLIBtb_NuIJ1xS4y2x3jS2dpnpuLwokgtS", "prager_u/history"],
+   ["https://www.youtube.com/watch?v=qVJAwqxagJs&list=PLIBtb_NuIJ1zF8AdDYs28tR3jfjIwyCpr", "prager_u/bonus_videos"],
+   ["https://www.youtube.com/watch?v=yBX-9eUtwzU&list=PLIBtb_NuIJ1w9rrlXRueM3opfoV0rUenS", "prager_u/religion_and_philosophy"],
+   ["https://www.youtube.com/watch?v=0X99PQEOk-w&list=PLIBtb_NuIJ1wK13RCWLFaVbzRyrER8wEQ", "prager_u/foreign_affairs"],
+   ["https://www.youtube.com/watch?v=SBnyEupyNB8&list=PLIBtb_NuIJ1w9GVrOrzMZbwU7Li6TAT91", "prager_u/life_studies"],
+   ["https://www.youtube.com/watch?v=DUyUpkQpMEw&list=PLIBtb_NuIJ1zs1gI2nYdZk6wL606nGOQ9", "prager_u/political_science"],
+   ["https://www.youtube.com/watch?v=qZN2jt2cCU4&list=PLIBtb_NuIJ1zpyK6kNR-xPfszMD_uDsEU", "prager_u/environmental_science"],
+   ["https://www.youtube.com/watch?v=MpToEILMnA4&list=PLIBtb_NuIJ1w6yO4w6l6uevneVX9qDh7_", "prager_u/race_relations"],
+   ["https://www.youtube.com/watch?v=FDwCuz4WUi4&list=PLIBtb_NuIJ1w_5qAEs5cSUJ5Bk0R8QLaY", "prager_u/economics"],
+   ["https://www.youtube.com/watch?v=giNJwXiktZ0&list=PLIBtb_NuIJ1zeuQ51NrTz7gMt0q89c8wK", "prager_u/welcome_to_prager_u"],
+   
+#    ["https://www.youtube.com/c/markdice/videos", "mark_dice"],
 ]
 

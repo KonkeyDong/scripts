@@ -6,20 +6,33 @@ require 'pp'
 require 'optparse'
 require_relative './stopwatch'
 require_relative './data'
+require_relative './config'
+
+def build_file_destination_path(path, directory_name)
+    "#{Config::HDD_DESTINATION_BASE}/#{path}/#{directory_name}"
+end
 
 # Note: data is an array of arrays. See data.rb for details on the information.
 def download(data, format, path, options)
-    hdd_destination = "/media/HDD_4TB_01/YouTube"
-    youtube_dl = "/usr/local/bin/youtube-dl --ignore-errors"
 
     data.each do |(url, directory_name)|
         #puts "url: #{url} | directory_name: #{directory_name}"
 
-        full_path = "#{hdd_destination}/#{path}/#{directory_name}"
+        full_path = build_file_destination_path(path, directory_name)
 
         #FileUtils.makedirs full_path
-        system("#{youtube_dl} --format #{format} '#{url}' -o '#{full_path}/%(upload_date)s_%(title)s.%(ext)s' #{options[:number_of_downloads]} #{options[:download_speed]} --restrict-filenames")
-        #system("#{youtube_dl} --format #{format} '#{url}' -o '#{full_path}/%(title)s.%(ext)s'")
+        command = [
+            Config::YOUTUBE_DL_BASE,
+            "--format #{format}",
+            "'#{url}'",
+            "-o '#{full_path}/#{Config::DESIRED_FILE_FORMAT}'",
+            "#{options[:number_of_downloads]}", 
+            "#{options[:download_speed]}",
+            "--restrict-filenames",
+            "--cookies ./cookies.txt"
+        ].join(' ')
+
+        system("#{command}")
     end
 end
 
@@ -77,7 +90,6 @@ def help
         -n, --number-of-downloads <number> : Set the MAX number of downloads.
         -s, --select                       : Select a specific url to download its entire library.
                                                 Exit upon completion.
-
         -u, --no-download-speed-throttle   : Removes the default 1 MB/second throttle.
                                                 (Careful not to get banned!!)
     HEREDOC
