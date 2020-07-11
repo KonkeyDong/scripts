@@ -21,18 +21,15 @@ def download(data, format, path, options)
         full_path = build_file_destination_path(path, directory_name)
 
         #FileUtils.makedirs full_path
-        command = [
+        system([
             Config::YOUTUBE_DL_BASE,
             "--format #{format}",
             "'#{url}'",
-            "-o '#{full_path}/#{Config::DESIRED_FILE_FORMAT}'",
-            "#{options[:number_of_downloads]}", 
-            "#{options[:download_speed]}",
-            "--restrict-filenames",
-            "--cookies ./cookies.txt"
-        ].join(' ')
-
-        system("#{command}")
+            "-o '#{full_path}/%(upload_date)s_%(title)s.%(ext)s'",
+            options[:number_of_downloads],
+            options[:download_speed],
+            "--restrict-filenames"
+        ].join(' '))
     end
 end
 
@@ -131,4 +128,3 @@ s = Stopwatch.new
 download(AUDIO, 'bestaudio', 'audio', options)
 download(VIDEO, 'bestvideo', 'videos', options)
 s.elapsed_time
-
