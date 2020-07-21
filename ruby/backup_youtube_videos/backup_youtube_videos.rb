@@ -35,48 +35,54 @@ end
 
 def build_hash_structure_for_download(data, format, path)
     data.reduce({}) do |previous, (url, author)|
-        new_author = author.to_sym
-        previous[new_author] = {}
-        previous[new_author][:url] = url
-        previous[new_author][:format] = format
-        previous[new_author][:path] = path
+        previous[author.to_sym] = {
+            url: url,
+            format: format,
+            path: path
+        }
 
         previous
     end
 end
 
-# TODO: Clean this code up!
 def select_specific_download(audio, video, options)
-    combined_data = {
+    selection = prompt_choices(audio, video)
+    exit_program?(selection)
+
+    result = {
         **build_hash_structure_for_download(audio, 'bestaudio', 'audio'),
         **build_hash_structure_for_download(video, 'bestvideo', 'videos')
-    }
+    }[selection.to_sym]
+    data_format = [[result[:url], selection]]
+    download(data_format, result[:format], result[:path], options)
 
+    rescue => e
+        puts e.message
+        exit 1
+end
+
+def prompt_choices(audio, video)
     puts "Pick a number to select which yotube playlist to download:"
     prompt = [*audio, *video].reduce(['EXIT PROGRAM']) do |previous, (url, author)|
         previous.push(author)
 
         previous
     end
-
+        
     prompt.each_with_index do |author, index|
         puts "#{index.to_s.rjust(3, ' ')}: #{author}"
     end
 
-    selection = prompt[gets.chomp.to_i]
+    prompt[gets.chomp.to_i]
+end
 
+def exit_program?(selection)
     if selection.nil? || selection == 'EXIT PROGRAM'
         puts "EXIT PROGRAM or invalid selection selected. Aborting..."
         exit 0
     end
 
-    result = combined_data[selection.to_sym]
-    final_result = [[result[:url], selection]]
-    download(final_result, result[:format], result[:path], options)
-
-    rescue => e
-        puts e.message
-        exit 1
+    false
 end
 
 def help
