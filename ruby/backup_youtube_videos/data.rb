@@ -15,8 +15,9 @@ AUDIO = [
 
     ["https://www.youtube.com/channel/UCtUId5WFnN82GdDy7DgaQ7w/videos", "better_ideas"],
     ["https://www.youtube.com/channel/UC5tEELgWBfKbA9fVPRzBzPQ/videos", "coach_red_pill"],
-    ["https://www.youtube.com/channel/UCc7-Rr-wSO530znK2ny05JQ/videos", "donovan_sharpe"],    
+    ["https://www.youtube.com/channel/UCc7-Rr-wSO530znK2ny05JQ/videos", "donovan_sharpe"],
     ["https://www.youtube.com/watch?v=TJFhZIjTIhU&list=PL68d6MdnLpLs4HVxM5npoRzidNlMgZn_a", "george_bruno/daybreak_show"],
+    ["https://www.youtube.com/c/JaymeEdwardsMedia/videos", "health_software_developer"],
     ["https://www.youtube.com/watch?v=L6dQH0CT3B8&list=PL7ukuCEjUSlxLH3WbxnlG8MlahVoPpfbz", "HuMAN"],
     ["https://www.youtube.com/watch?v=T5yyHZwTOpA&list=PLIBtb_NuIJ1wCrBmN2Z3jcQ4vvmOEi-7-", "prager_u/fireside_chat"],
     ["https://www.youtube.com/channel/UC-tLyAaPbRZiYrOJxAGB7dQ/videos", "pursuit_of_wonder"],
@@ -27,6 +28,7 @@ AUDIO = [
     ["https://www.youtube.com/watch?v=n1JoMsDJqgw&list=PLMcVcytzH5GEkYN7-aGRMikLCbZ8YzSY2", "richard_cooper/money_advice"],
     ["https://www.youtube.com/watch?v=no7QSlMOrYc&list=PLMcVcytzH5GEZRHeDCeHPDY2HMeoNsS9n", "richard_cooper/self_care"],
     ["https://www.youtube.com/watch?v=O2KmvuzaCQ8&list=PLMcVcytzH5GFfyjstvv4G5rezVKc6tziI", "richard_cooper/entrepreneurial_and_bsuiness_tips"],
+    ["https://www.youtube.com/watch?v=nV7B0Fzcl2w&list=PLMcVcytzH5GGEP8Do5l_iZkYdlArf_ZA3", "richard_cooper/red_pill_for_men"],
     ["https://www.youtube.com/watch?v=6jPh1oiOzAM&list=PLMcVcytzH5GHH2YMfJ1qcAZ2cMyBwtpjK", "richard_cooper/marriage"],
     ["https://www.youtube.com/watch?v=eQFNpD1IaP0&list=PLMcVcytzH5GFZg1mmU2sWTAFvyCKa4EcV", "richard_cooper/before_the_trainwreck"],
 
@@ -39,9 +41,10 @@ AUDIO = [
 
     ["https://www.youtube.com/channel/UCfpnY5NnBl-8L7SvICuYkYQ/videos", "scott_adams"],
     ["https://www.youtube.com/channel/UCHFqcgpUuyOGSsG5N3_N0sA/videos", "strong_successful_male"],
-    
+
     ["https://www.youtube.com/watch?v=NHYKpqFUXa0&list=PL3-KFmkeZ60j6iPrvNZxx9_L31KjbrbFE", "tom_leykis"],
     ["https://www.youtube.com/channel/UCWu-IOxbeSD-MRM2Q87ZF0A/videos", "think_before_you_sleep"],
+    ["https://www.youtube.com/c/RolloTomassi/videos", "rollo_tomassi"],
 ]
 
 # --format bestvideo
@@ -59,5 +62,5 @@ VIDEO = [
     ["https://www.youtube.com/watch?v=qZN2jt2cCU4&list=PLIBtb_NuIJ1zpyK6kNR-xPfszMD_uDsEU", "prager_u/environmental_science"],
     ["https://www.youtube.com/watch?v=MpToEILMnA4&list=PLIBtb_NuIJ1w6yO4w6l6uevneVX9qDh7_", "prager_u/race_relations"],
     ["https://www.youtube.com/watch?v=FDwCuz4WUi4&list=PLIBtb_NuIJ1w_5qAEs5cSUJ5Bk0R8QLaY", "prager_u/economics"],
-    ["https://www.youtube.com/watch?v=giNJwXiktZ0&list=PLIBtb_NuIJ1zeuQ51NrTz7gMt0q89c8wK", "prager_u/welcome_to_prager_u"],    
+    ["https://www.youtube.com/watch?v=giNJwXiktZ0&list=PLIBtb_NuIJ1zeuQ51NrTz7gMt0q89c8wK", "prager_u/welcome_to_prager_u"],
 ]
