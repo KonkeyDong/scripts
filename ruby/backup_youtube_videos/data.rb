@@ -6,7 +6,7 @@
 
 # --format bestaudio
 AUDIO = [
-    # ["https://www.youtube.com/user/AaronClarey/videos", "aaron_clarey"],
+    ["https://www.youtube.com/user/AaronClarey/videos", "aaron_clarey"],
     ["https://www.youtube.com/user/artofmanliness/videos", "art_of_manliness"],
 
     # Better Bachelor / Odd Man Out
@@ -45,6 +45,26 @@ AUDIO = [
     ["https://www.youtube.com/watch?v=NHYKpqFUXa0&list=PL3-KFmkeZ60j6iPrvNZxx9_L31KjbrbFE", "tom_leykis"],
     ["https://www.youtube.com/channel/UCWu-IOxbeSD-MRM2Q87ZF0A/videos", "think_before_you_sleep"],
     ["https://www.youtube.com/c/RolloTomassi/videos", "rollo_tomassi"],
+    ["https://www.youtube.com/watch?v=430AifBjTsc&list=PLP8MR2_RbLUErFTPy5oI_chngHwid-tQ2", "the_fallen_state"],
+    ["https://www.youtube.com/watch?v=mGj_Jm2RrY4&list=PLkVbIsAWN2lvpys3pHlAHXGEamiDEWiRN", "louis_rossman/core_philosophies_and_rants"],
+    ["https://www.youtube.com/watch?v=KzOcpheBMDo&list=PLkVbIsAWN2luLeViTZ499dZNsZHavrGBE", "louis_rossman/business_advice"]
+    ["https://www.youtube.com/watch?v=P_6vDLq64gE&list=PLkVbIsAWN2ltjJ6bupvWuUoCPv_FDGy5q", "louis_rossman/time_management"]
+
+    # Rekieta Law
+    ["https://www.youtube.com/watch?v=LKxyUpyPCFA&list=PLJdwBXWZFqz40DZbE2XAfp3Bp1JOu3oeA", "rekieta_law/livestreams"],
+    ["https://www.youtube.com/watch?v=KvWng0jQBcM&list=PLJdwBXWZFqz55XuzYX2RMnOgQWGzIvIaW", "rekieta_law/past_videos"],
+    ["https://www.youtube.com/watch?v=YK0NfYE8baQ&list=PLJdwBXWZFqz4B2Y3ZZZsspLrL6o-iONFR", "rekieta_law/ronversations"],
+    ["https://www.youtube.com/watch?v=4kLFsicmhMM&list=PLJdwBXWZFqz4OZo9w1lTTToDUYczIBc3Q", "rekieta_law/legal_news"],
+    ["https://www.youtube.com/watch?v=S0kiLPUno_8&list=PLJdwBXWZFqz4qhekaRpVbSmh0KrnLKBua", "rekieta_law/drexel_casts"],
+    ["https://www.youtube.com/watch?v=snt0KPwYYv0&list=PLJdwBXWZFqz6wcpy4Q9pjXEkpP9WIZI7d", "rekieta_law/weeb_wars_-_vic_mignogna"],
+    ["https://www.youtube.com/watch?v=TR6Q5s93ddk&list=PLJdwBXWZFqz6jeXLJfqGCCnMdeFVoD_fg", "rekieta_law/trump_topics"],
+    ["https://www.youtube.com/watch?v=EIf51ng0HhE&list=PLJdwBXWZFqz5_7BI6iAA9HHjbc-LuY83D", "rekieta_law/comicsgate"],
+    ["https://www.youtube.com/watch?v=tiy2uzWp1LA&list=PLJdwBXWZFqz7htX9VpS_vZP4P6FXDU9n1", "rekieta_law/interviews"],
+    ["https://www.youtube.com/watch?v=DN4JCo4bjnM&list=PLJdwBXWZFqz7ZAy84yGaQDThZMu15gg70", "rekieta_law/maddox_vs_dick_masterson_-_the_lolsuit"],
+    ["https://www.youtube.com/watch?v=uKa4MKjZNdI&list=PLJdwBXWZFqz6sCGhULUbrXlUVfQSoobNs", "rekieta_law/quarter_pounded"],
+    ["https://www.youtube.com/watch?v=B_DqbAlaKd0&list=PLJdwBXWZFqz6XhjKaqrjwwjRBecPwimo-", "rekieta_law/taylor_swift_sued"],
+    ["https://www.youtube.com/watch?v=6TgwXIDCl4U&list=PLJdwBXWZFqz6QboVcOKpXpsRAIn9k4oM-", "rekieta_law/gun_control"],
+    ["https://www.youtube.com/watch?v=6EofaLD42hE&list=PLJdwBXWZFqz7ECStt50OFTZCZjqa5pss3", "rekieta_law/a_google_manifesto"],
 ]
 
 # --format bestvideo
@@ -63,4 +83,7 @@ VIDEO = [
     ["https://www.youtube.com/watch?v=MpToEILMnA4&list=PLIBtb_NuIJ1w6yO4w6l6uevneVX9qDh7_", "prager_u/race_relations"],
     ["https://www.youtube.com/watch?v=FDwCuz4WUi4&list=PLIBtb_NuIJ1w_5qAEs5cSUJ5Bk0R8QLaY", "prager_u/economics"],
     ["https://www.youtube.com/watch?v=giNJwXiktZ0&list=PLIBtb_NuIJ1zeuQ51NrTz7gMt0q89c8wK", "prager_u/welcome_to_prager_u"],
+
+    ["https://www.youtube.com/watch?v=9cs3f-oI-lI&list=PLkVbIsAWN2lsHdY7ldAAgtJug50pRNQv0", "louis_rossman/macbook_component_level_logic_board_repairs"],
+    ["https://www.youtube.com/watch?v=D2u1zPgphiM&list=PLkVbIsAWN2ltOWmriIdOc5CtiZqUTH7GT", "louis_rossman/guide_to_basic_electronics"],
 ]
