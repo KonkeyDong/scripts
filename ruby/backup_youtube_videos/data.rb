@@ -47,8 +47,8 @@ AUDIO = [
     ["https://www.youtube.com/c/RolloTomassi/videos", "rollo_tomassi"],
     ["https://www.youtube.com/watch?v=430AifBjTsc&list=PLP8MR2_RbLUErFTPy5oI_chngHwid-tQ2", "the_fallen_state"],
     ["https://www.youtube.com/watch?v=mGj_Jm2RrY4&list=PLkVbIsAWN2lvpys3pHlAHXGEamiDEWiRN", "louis_rossman/core_philosophies_and_rants"],
-    ["https://www.youtube.com/watch?v=KzOcpheBMDo&list=PLkVbIsAWN2luLeViTZ499dZNsZHavrGBE", "louis_rossman/business_advice"]
-    ["https://www.youtube.com/watch?v=P_6vDLq64gE&list=PLkVbIsAWN2ltjJ6bupvWuUoCPv_FDGy5q", "louis_rossman/time_management"]
+    ["https://www.youtube.com/watch?v=KzOcpheBMDo&list=PLkVbIsAWN2luLeViTZ499dZNsZHavrGBE", "louis_rossman/business_advice"],
+    ["https://www.youtube.com/watch?v=P_6vDLq64gE&list=PLkVbIsAWN2ltjJ6bupvWuUoCPv_FDGy5q", "louis_rossman/time_management"],
 
     # Rekieta Law
     ["https://www.youtube.com/watch?v=LKxyUpyPCFA&list=PLJdwBXWZFqz40DZbE2XAfp3Bp1JOu3oeA", "rekieta_law/livestreams"],
