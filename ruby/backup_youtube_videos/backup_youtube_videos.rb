@@ -28,7 +28,8 @@ def download(data, format, path, options)
             "-o '#{full_path}/%(upload_date)s_%(title)s.%(ext)s'",
             options[:number_of_downloads],
             options[:download_speed],
-            "--restrict-filenames"
+            "--restrict-filenames",
+            options[:cookie]
         ].join(' '))
     end
 end
@@ -49,13 +50,15 @@ def select_specific_download(audio, video, options)
     selection = prompt_choices(audio, video)
     exit_program?(selection)
 
-    result = {
-        **build_hash_structure_for_download(audio, 'bestaudio', 'audio'),
-        **build_hash_structure_for_download(video, 'bestvideo', 'videos')
-    }[selection.to_sym]
-    data_format = [[result[:url], selection]]
-    download(data_format, result[:format], result[:path], options)
+    selection.each do |item|
+        result = {
+            **build_hash_structure_for_download(audio, 'bestaudio', 'audio'),
+            **build_hash_structure_for_download(video, 'bestvideo', 'videos')
+        }[item.to_sym]
 
+        data_format = [[result[:url], item]]
+        download(data_format, result[:format], result[:path], options)
+    end
     rescue => e
         puts e.message
         exit 1
@@ -73,7 +76,16 @@ def prompt_choices(audio, video)
         puts "#{index.to_s.rjust(3, ' ')}: #{author}"
     end
 
-    prompt[gets.chomp.to_i]
+    gets
+        .chomp
+        .gsub(/\s+/, " ")
+        .split(" ")
+        .map(&:to_i)
+        .reduce([]) do |previous, current|
+            previous.push(prompt[current])
+
+            previous
+        end
 end
 
 def exit_program?(selection)
@@ -105,6 +117,7 @@ options = {
     number_of_downloads: '',
     cookie: '',
     download_speed: '-r 1m', # 1 MB download/second MAX default
+    select_download: false
 }
 
 OptionParser.new do |opts|
@@ -123,21 +136,22 @@ OptionParser.new do |opts|
         puts "Download speed NOT throttled"
     end
 
-    opts.on('-c', '--cookies') do |cookie_file|
+    opts.on('-c STRING', '--cookies STRING') do |cookie_file|
         options[:cookie] = "--cookie #{File.absolute_path(cookie_file)}"
         puts "cookie: #{options[:cookie]}"
     end
 
     opts.on('-s', '--select') do
-        s = Stopwatch.new
-        select_specific_download(AUDIO, VIDEO, options)
-        s.elapsed_time
-        exit 0
+        options[:select_download] = true
     end
 
 end.parse!
 
 s = Stopwatch.new
-download(AUDIO, 'bestaudio', 'audio', options)
-download(VIDEO, 'bestvideo', 'videos', options)
+if options[:select_download]
+    select_specific_download(AUDIO, VIDEO, options)
+else
+    download(AUDIO, 'bestaudio', 'audio', options)
+    download(VIDEO, 'bestvideo', 'videos', options)
+end
 s.elapsed_time
