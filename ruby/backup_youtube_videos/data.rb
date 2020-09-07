@@ -65,6 +65,8 @@ AUDIO = [
     ["https://www.youtube.com/watch?v=B_DqbAlaKd0&list=PLJdwBXWZFqz6XhjKaqrjwwjRBecPwimo-", "rekieta_law/taylor_swift_sued"],
     ["https://www.youtube.com/watch?v=6TgwXIDCl4U&list=PLJdwBXWZFqz6QboVcOKpXpsRAIn9k4oM-", "rekieta_law/gun_control"],
     ["https://www.youtube.com/watch?v=6EofaLD42hE&list=PLJdwBXWZFqz7ECStt50OFTZCZjqa5pss3", "rekieta_law/a_google_manifesto"],
+
+    ["https://www.youtube.com/c/VALUETAINMENT/videos", "valuetainment"],
 ]
 
 # --format bestvideo
