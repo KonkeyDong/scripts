@@ -67,6 +67,8 @@ AUDIO = [
     ["https://www.youtube.com/watch?v=6EofaLD42hE&list=PLJdwBXWZFqz7ECStt50OFTZCZjqa5pss3", "rekieta_law/a_google_manifesto"],
 
     ["https://www.youtube.com/c/VALUETAINMENT/videos", "valuetainment"],
+
+    ["https://www.youtube.com/c/SaltyCracker/videos", "salty_cracker"],
 ]
 
 # --format bestvideo
