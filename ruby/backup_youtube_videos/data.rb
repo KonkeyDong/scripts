@@ -99,6 +99,10 @@ VIDEO = [
     ["https://www.youtube.com/watch?v=Mtr9_BD7UZo&list=PLJ_TJFLc25JTq_lP-ajxB3OQJnDsK9M0-", "red_letter_media/pre_rec"],
     ["https://www.youtube.com/watch?v=Ao99bNrJ_1Q&list=PLJ_TJFLc25JQaIKha3sduCHUXkFcNMMDS", "red_letter_media/mr_plinkett_ads_and_trailers"],
     ["https://www.youtube.com/watch?v=pF28Zednl10&list=PLJ_TJFLc25JSeHaHvnLsVJjpPGbFsylAE", "red_letter_media/behind_the_scenes"],
-    ["https://www.youtube.com/watch?v=bYWAHuFbLoc&list=PLJ_TJFLc25JTwinvdLo4PP2rTFfTd9Uhz", "red_letter_media/star_wars_episode_3"],
     ["https://www.youtube.com/watch?v=DXWTfamqgMg&list=PLJ_TJFLc25JR3VZ7Xe-cmt4k3bMKBZ5Tm", "red_letter_media/best_of_the_worst"],
+    ["https://www.youtube.com/watch?v=svzfjasdvac&list=PL8F9A69893481FB47", "red_letter_media/shorts_and_weird_stuff"],
+    ["https://www.youtube.com/watch?v=3tx33tgXT3M&list=PL34C1F26D03F5F9B8", "red_letter_media/half_in_the_bag"],
+    ["https://www.youtube.com/watch?v=FxKtZmQgxrI&list=PL5919C8DE6F720A2D", "red_letter_media/star_wars_episode_1"],
+    ["https://www.youtube.com/watch?v=KPt1am18lR4&list=PL56E3EB1DFD4B64A2", "red_letter_media/star_wars_episode_2"],
+    ["https://www.youtube.com/watch?v=bYWAHuFbLoc&list=PLJ_TJFLc25JTwinvdLo4PP2rTFfTd9Uhz", "red_letter_media/star_wars_episode_3"],
 ]
