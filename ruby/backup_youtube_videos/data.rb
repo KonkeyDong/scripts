@@ -90,4 +90,15 @@ VIDEO = [
 
     ["https://www.youtube.com/watch?v=9cs3f-oI-lI&list=PLkVbIsAWN2lsHdY7ldAAgtJug50pRNQv0", "louis_rossman/macbook_component_level_logic_board_repairs"],
     ["https://www.youtube.com/watch?v=D2u1zPgphiM&list=PLkVbIsAWN2ltOWmriIdOc5CtiZqUTH7GT", "louis_rossman/guide_to_basic_electronics"],
+
+    # red letter media
+    ["https://www.youtube.com/watch?v=UCIYCaXNe88&list=PLJ_TJFLc25JRrUJFPO6Iwy2vkn8QtqBCE", "red_letter_media/nerd_crew"],
+    ["https://www.youtube.com/watch?v=1sJM0_xyO1c&list=PLJ_TJFLc25JSpxBDbSYnlyjHlg0YIp2ZX", "red_letter_media/movie_talk"],
+    ["https://www.youtube.com/watch?v=N-px3CZv0zI&list=PLJ_TJFLc25JSmtBkyIYqgD5KabbU57yzY", "red_letter_media/re_view"],
+    ["https://www.youtube.com/watch?v=MiqElS_RfPw&list=PLJ_TJFLc25JTxhK8VHJXHAG7QMiUd-JXd", "red_letter_media/highlights"],
+    ["https://www.youtube.com/watch?v=Mtr9_BD7UZo&list=PLJ_TJFLc25JTq_lP-ajxB3OQJnDsK9M0-", "red_letter_media/pre_rec"],
+    ["https://www.youtube.com/watch?v=Ao99bNrJ_1Q&list=PLJ_TJFLc25JQaIKha3sduCHUXkFcNMMDS", "red_letter_media/mr_plinkett_ads_and_trailers"],
+    ["https://www.youtube.com/watch?v=pF28Zednl10&list=PLJ_TJFLc25JSeHaHvnLsVJjpPGbFsylAE", "red_letter_media/behind_the_scenes"],
+    ["https://www.youtube.com/watch?v=bYWAHuFbLoc&list=PLJ_TJFLc25JTwinvdLo4PP2rTFfTd9Uhz", "red_letter_media/star_wars_episode_3"],
+    ["https://www.youtube.com/watch?v=DXWTfamqgMg&list=PLJ_TJFLc25JR3VZ7Xe-cmt4k3bMKBZ5Tm", "red_letter_media/best_of_the_worst"],
 ]
