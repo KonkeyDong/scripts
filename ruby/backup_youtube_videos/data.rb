@@ -69,6 +69,7 @@ AUDIO = [
     ["https://www.youtube.com/c/VALUETAINMENT/videos", "valuetainment"],
 
     ["https://www.youtube.com/c/SaltyCracker/videos", "salty_cracker"],
+    ["https://www.youtube.com/c/UncivilLaw/videos", "uncivil_law"],
 ]
 
 # --format bestvideo
