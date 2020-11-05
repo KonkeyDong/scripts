@@ -70,6 +70,8 @@ AUDIO = [
 
     ["https://www.youtube.com/c/SaltyCracker/videos", "salty_cracker"],
     ["https://www.youtube.com/c/UncivilLaw/videos", "uncivil_law"],
+
+    ["https://www.youtube.com/c/THEBOYSCASTWITHRYANLONG/videos", "ryan_long/the_boyscast"],
 ]
 
 # --format bestvideo
@@ -106,4 +108,8 @@ VIDEO = [
     ["https://www.youtube.com/watch?v=FxKtZmQgxrI&list=PL5919C8DE6F720A2D", "red_letter_media/star_wars_episode_1"],
     ["https://www.youtube.com/watch?v=KPt1am18lR4&list=PL56E3EB1DFD4B64A2", "red_letter_media/star_wars_episode_2"],
     ["https://www.youtube.com/watch?v=bYWAHuFbLoc&list=PLJ_TJFLc25JTwinvdLo4PP2rTFfTd9Uhz", "red_letter_media/star_wars_episode_3"],
+
+    ["https://www.youtube.com/watch?v=oikBLnA076k&list=PLYLi1xsyfNshKtpc0Czo-Oig0qDYnrS0H", "ryan_long/ryan_long_is_challenged"],
+    ["https://www.youtube.com/watch?v=yPtYd7TzKDQ&list=PLYLi1xsyfNsi4sJX1RY6fTRBZqaUEV_w5", "ryan_long/sketches"],
+    ["https://www.youtube.com/watch?v=3SO9F7EuXn4&list=PLYLi1xsyfNsgpYyEAgEq-wmhdywKNxwHy", "ryan_long/on_the_street"],
 ]
