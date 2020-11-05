@@ -72,6 +72,8 @@ AUDIO = [
     ["https://www.youtube.com/c/UncivilLaw/videos", "uncivil_law"],
 
     ["https://www.youtube.com/c/THEBOYSCASTWITHRYANLONG/videos", "ryan_long/the_boyscast"],
+
+    ["https://www.youtube.com/c/AnthonyBrianLogan/videos", "anthony_brian_logan"],
 ]
 
 # --format bestvideo
