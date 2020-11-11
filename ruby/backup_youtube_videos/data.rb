@@ -74,6 +74,8 @@ AUDIO = [
     ["https://www.youtube.com/c/THEBOYSCASTWITHRYANLONG/videos", "ryan_long/the_boyscast"],
 
     ["https://www.youtube.com/c/AnthonyBrianLogan/videos", "anthony_brian_logan"],
+
+    ["https://www.youtube.com/channel/UC_YtbwcocB4HbbTRVO8fqbQ", "viking_traveler"],
 ]
 
 # --format bestvideo
