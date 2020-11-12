@@ -76,6 +76,8 @@ AUDIO = [
     ["https://www.youtube.com/c/AnthonyBrianLogan/videos", "anthony_brian_logan"],
 
     ["https://www.youtube.com/channel/UC_YtbwcocB4HbbTRVO8fqbQ/videos", "viking_traveler"],
+
+    ["https://www.youtube.com/c/TheLarryElderShowRadio/videos", "larry_elder_show"],
 ]
 
 # --format bestvideo
