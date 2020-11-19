@@ -78,6 +78,7 @@ AUDIO = [
     ["https://www.youtube.com/channel/UC_YtbwcocB4HbbTRVO8fqbQ/videos", "viking_traveler"],
 
     ["https://www.youtube.com/c/TheLarryElderShowRadio/videos", "larry_elder_show"],
+    ["https://www.youtube.com/channel/UCVYM293tSks8SxnHS-UUhzA/videos", "molyneux_resurrected"],
 ]
 
 # --format bestvideo
