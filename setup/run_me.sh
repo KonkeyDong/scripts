@@ -1,7 +1,25 @@
 #!/bin/bash
 
 # install useful programs
-sudo apt install neovim ntfs-3g youtube-dl curl ranger vlc ruby ruby-dev build-essential keepass2 zsh zlib1g-dev liblzma-dev -y
+sudo apt install -y \
+    neovim \
+    ntfs-3g \
+    youtube-dl \
+    curl \
+    ranger \
+    vlc \
+    ruby \
+    ruby-dev \
+    build-essential \
+    keepass2 \
+    zsh \
+    zlib1g-dev \
+    liblzma-dev \
+    libffi-dev \
+    libssl-dev \
+    python3-dev \
+    python3 \
+    python3-pip
 
 # Note: to install ruby byebug and parallel-forkmanager,
 #       you need to install ruby and ruby-dev!
@@ -43,8 +61,9 @@ echo "Copying config directory ..."
 mkdir -p ~/.config
 cp -r ${GIT_CONFIG_DIR}/* ${CONFIG_DIR}
 
-echo "run [download_vscode.sh] to download VS Code separetly."
-echo "run [download_joplin.sh] to download Joplin separetely."
+echo "run [download_vscode.sh] to download VS Code separately."
+echo "run [download_joplin.sh] to download Joplin separately."
+echo "run [download_docker.sh] to download Docker separately."
 
 # add aliases
 source ${BASH_RC}
