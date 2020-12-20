@@ -80,6 +80,7 @@ AUDIO = [
     ["https://www.youtube.com/c/TheLarryElderShowRadio/videos", "larry_elder_show"],
     ["https://www.youtube.com/channel/UCVYM293tSks8SxnHS-UUhzA/videos", "molyneux_resurrected"],
     ["https://www.youtube.com/channel/UCkpI0T2rD5N3tN5R3BQqhkw/videos", "migtown_podcast"],
+    ["https://www.youtube.com/21/videos", "21_studios"],
 ]
 
 # --format bestvideo

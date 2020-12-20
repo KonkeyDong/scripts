@@ -29,7 +29,8 @@ def download(data, format, path, options)
             options[:number_of_downloads],
             options[:download_speed],
             "--restrict-filenames",
-            options[:cookie]
+            options[:cookie],
+             "--download-archive #{full_path}/archive.txt"
         ].join(' '))
     end
 end
@@ -71,7 +72,7 @@ def prompt_choices(audio, video)
 
         previous
     end
-        
+
     prompt.each_with_index do |author, index|
         puts "#{index.to_s.rjust(3, ' ')}: #{author}"
     end
