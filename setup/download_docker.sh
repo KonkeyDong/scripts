@@ -2,18 +2,21 @@
 
 echo "Running [download_docker.sh]..."
 
-# Install Docker
+# Docker
 curl -fsSL https://get.docker.com -o ~/get-docker.sh
 sudo sh ~/get-docker.sh
 sudo usermod -aG docker $(whoami)
 
-echo "Checking if docker installed..."
+# Did we install correctly?
+echo "Checking if Docker installed correctly..."
 sudo docker version
-sudo docker run hello-world
+echo
+echo "If you saw a docker version number, it appears that Docker has installed correctly!"
 
-# Install docker-compose
+# Docker-Compose
 sudo pip3 install docker-compose
 
-echo "Docker installation successful!"
-echo "NOTE: log out / reboot your machine in order for the Docker group to take effect. Otherwise, you'll have to prepend [sudo] in front of all docker commands!
+echo "Download and installation complete!"
+echo "NOTE: you will have to log out / restart your machine in order for the recently added Docker group to take affect. Otherwise, you'll have to run the [sudo] command before every Docker command!"
+echo "Once you have logged off / rebooted, try running: [docker run hello-world]"
 
