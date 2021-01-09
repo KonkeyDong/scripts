@@ -81,6 +81,29 @@ AUDIO = [
     ["https://www.youtube.com/channel/UCVYM293tSks8SxnHS-UUhzA/videos", "molyneux_resurrected"],
     ["https://www.youtube.com/channel/UCkpI0T2rD5N3tN5R3BQqhkw/videos", "migtown_podcast"],
     ["https://www.youtube.com/21/videos", "21_studios"],
+
+    # rubin report
+    ["https://www.youtube.com/watch?v=OEm8x8FUvGo&list=PLEbhOtC9klbCr0iN2ANJbaV477B0eSpc6", "rubin_report/politics"],
+    ["https://www.youtube.com/watch?v=AlPmSim6vLQ&list=PLEbhOtC9klbBVQDiwKCMq8RrYdmBjKRrb", "rubin_report/spirituality"],
+    ["https://www.youtube.com/watch?v=apW4PijVFy8&list=PLEbhOtC9klbC2YRtDs9vM2Vjx7f_G2eOh", "rubin_report/lifestyle"],
+    ["https://www.youtube.com/watch?v=oEXFj2R5PvY&list=PLEbhOtC9klbAdjjO8G8VsUxu_LZVi2ia1", "rubin_report/comedy"],
+    ["https://www.youtube.com/watch?v=a4LSUZm3_kE&list=PLEbhOtC9klbBQiqrd9ZZThHpEmsH1oL_H", "rubin_report/academia"],
+    ["https://www.youtube.com/watch?v=N9QpMYvY2GQ&list=PLEbhOtC9klbAvD7li3RhdYMbPMLkNvvso", "rubin_report/media"],
+    ["https://www.youtube.com/watch?v=XevutG_rLy8&list=PLEbhOtC9klbCe4nJu4Nsa_kLEmf7BMlN4", "rubin_report/environment"],
+    ["https://www.youtube.com/watch?v=h10kXgTdhNU&list=PLEbhOtC9klbDzksGrbLATckXU5BkQrQP0", "rubin_report/tech"],
+    ["https://www.youtube.com/watch?v=OTEDYEwfiwk&list=PLEbhOtC9klbAW0xRw062xX5hmjAqhoHaN", "rubin_report/international"],
+    ["https://www.youtube.com/watch?v=YIFdWhRwfFg&list=PLEbhOtC9klbCaPvg-Fr25Ar1trAReGprV", "rubin_report/womens_issues"],
+    ["https://www.youtube.com/watch?v=1R1P3lR5yDQ&list=PLEbhOtC9klbDz8XZVdWttEaxA4mdUplIw", "rubin_report/dont_burn_this_book"],
+    ["https://www.youtube.com/watch?v=0UI9cF9OJaU&list=PLEbhOtC9klbCjVi6W-hFh2ShudGAAO6A4", "rubin_report/youtubers"],
+    ["https://www.youtube.com/watch?v=Knv7ZwIBmvs&list=PLEbhOtC9klbDWsT-fWpJs6NV-t3w9uFK-", "rubin_report/free_speech"],
+    ["https://www.youtube.com/watch?v=LzwLXFB_2_g&list=PLEbhOtC9klbDV-LWpYW7wF5_3tZsvAibc", "rubin_report/guns"],
+    ["https://www.youtube.com/watch?v=H9xC1psOINg&list=PLEbhOtC9klbBKHGtmnTbH1zX92vfKfs-y", "rubin_report/law"],
+    ["https://www.youtube.com/c/lexfridman/videos", "lex_fridman"],
+    ["https://www.youtube.com/c/AdamcastIRL/videos", "adamcast_irl"],
+    ["https://www.youtube.com/c/skagg3/videos", "matt_christiansen"],
+    ["https://www.youtube.com/c/JesseLeePeterson1/videos", "jesse_lee_peterson"],
+	["https://www.youtube.com/watch?v=P6Ogx_wg3fU&list=PLyQSN7X0ro21TqRT8493kIR--yvy-2P8E", "walter_lewin/interviews"],
+    ["https://www.youtube.com/c/JesseLeePeterson1/videos", "jesse_lee_peterson"],
 ]
 
 # --format bestvideo
@@ -116,9 +139,34 @@ VIDEO = [
     ["https://www.youtube.com/watch?v=3tx33tgXT3M&list=PL34C1F26D03F5F9B8", "red_letter_media/half_in_the_bag"],
     ["https://www.youtube.com/watch?v=FxKtZmQgxrI&list=PL5919C8DE6F720A2D", "red_letter_media/star_wars_episode_1"],
     ["https://www.youtube.com/watch?v=KPt1am18lR4&list=PL56E3EB1DFD4B64A2", "red_letter_media/star_wars_episode_2"],
+
+	# ryan long
     ["https://www.youtube.com/watch?v=bYWAHuFbLoc&list=PLJ_TJFLc25JTwinvdLo4PP2rTFfTd9Uhz", "red_letter_media/star_wars_episode_3"],
 
     ["https://www.youtube.com/watch?v=oikBLnA076k&list=PLYLi1xsyfNshKtpc0Czo-Oig0qDYnrS0H", "ryan_long/ryan_long_is_challenged"],
     ["https://www.youtube.com/watch?v=yPtYd7TzKDQ&list=PLYLi1xsyfNsi4sJX1RY6fTRBZqaUEV_w5", "ryan_long/sketches"],
     ["https://www.youtube.com/watch?v=3SO9F7EuXn4&list=PLYLi1xsyfNsgpYyEAgEq-wmhdywKNxwHy", "ryan_long/on_the_street"],
+
+
+    # walter lewin (physics)
+	["https://www.youtube.com/watch?v=bgo0lhemfr0&list=PLyQSN7X0ro22xlW7KK06r9ip9DXTD7c4_", "walter_lewin/string_theory"],
+	["https://www.youtube.com/watch?v=2h1E3YJMKfA&list=PLyQSN7X0ro22VD0Vzl9yaYNUZf3CdfqaE", "walter_lewin/quantum_mechanics"],
+	["https://www.youtube.com/watch?v=tj4JwDfxVy8&list=PLyQSN7X0ro23NUN9RYBP5xdBYoiv2_5y2", "walter_lewin/feynmans_lectures"],
+	["https://www.youtube.com/watch?v=eNHdvZNlTUk&list=PLyQSN7X0ro207exLyDsBo_N3_EJcydeeM", "walter_lewin/solutions_to_bi_weekly_physics_problems"],
+	["https://www.youtube.com/watch?v=6xTPLK5tXzE&list=PLyQSN7X0ro23CEzKOjAVcRq66m6g-mFLe", "walter_lewin/bi_weekly_physics_problems"],
+	["https://www.youtube.com/watch?v=aMlt1I-W5EM&list=PLyQSN7X0ro23OQNCTCv0ibb2LkcR41-6k", "walter_lewin/teaches_miley_cyrus"], # LOL
+	["https://www.youtube.com/watch?v=iQPWUfIHcoI&list=PLyQSN7X0ro23IUORJBSDBH8AUWZ1mQBna", "walter_lewin/8.01_help_sessions"],
+	["https://www.youtube.com/watch?v=ZUYfbV-m9gw&list=PLyQSN7X0ro200pTRGPkPp4kBEzFrSbZ3c", "walter_lewin/8.02_help_sessions"],
+	["https://www.youtube.com/watch?v=rtlJoXxlSFE&list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j", "walter_lewin/8.02_physics_II_electricity_and_magnetism"],
+	["https://www.youtube.com/watch?v=sf3XlpPtBo0&list=PLyQSN7X0ro22WeXM2QCKJm2NP_xHpGV89", "walter_lewin/8.03_physics_III_vibrations_and_waves"],
+	["https://www.youtube.com/watch?v=YbFgNsM6r44&list=PLyQSN7X0ro23AZkDaZF8EoTb6toYYkp6W", "walter_lewin/8.03_help_sessions"],
+	["https://www.youtube.com/watch?v=lZ3bPUKo5zc&list=PLyQSN7X0ro21XsVfRHhiWGEEJigdjpF3s", "walter_lewin/8.04_quantum_physics_I"],
+	["https://www.youtube.com/watch?v=QI13S04w8dM&list=PLyQSN7X0ro21y1VjcdTi5jbpH26O-Tk68", "walter_lewin/8.05_quantum_physics_II"],
+
+	["https://www.youtube.com/c/FreedomToons/videos", "freedom_toons"],
+	["https://www.youtube.com/c/TwoCentsPBS/videos", "two_cents"],
+	["https://www.youtube.com/c/Simplehistory/videos", "simple_history"],
+	["https://www.youtube.com/user/PrisonPlanetLive/videos", "paul_joseph_watson"],
+	["https://www.youtube.com/c/SoldierofSteel/videos", "john_burk"],
+	["", ""],
 ]
