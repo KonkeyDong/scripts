@@ -108,7 +108,6 @@ AUDIO = [
     ["https://www.youtube.com/c/lexfridman/videos", "lex_fridman"],
     ["https://www.youtube.com/c/AdamcastIRL/videos", "adamcast_irl"],
     ["https://www.youtube.com/c/skagg3/videos", "matt_christiansen"],
-    ["https://www.youtube.com/c/JesseLeePeterson1/videos", "jesse_lee_peterson"],
 	["https://www.youtube.com/watch?v=P6Ogx_wg3fU&list=PLyQSN7X0ro21TqRT8493kIR--yvy-2P8E", "walter_lewin/interviews"],
 ]
 
