@@ -45,7 +45,12 @@ AUDIO = [
     ["https://www.youtube.com/watch?v=NHYKpqFUXa0&list=PL3-KFmkeZ60j6iPrvNZxx9_L31KjbrbFE", "tom_leykis"],
     ["https://www.youtube.com/channel/UCWu-IOxbeSD-MRM2Q87ZF0A/videos", "think_before_you_sleep"],
     ["https://www.youtube.com/c/RolloTomassi/videos", "rollo_tomassi"],
-    ["https://www.youtube.com/watch?v=430AifBjTsc&list=PLP8MR2_RbLUErFTPy5oI_chngHwid-tQ2", "the_fallen_state"],
+
+    # Jesse Lee Peterson
+    ["https://www.youtube.com/c/JesseLeePeterson1/videos", "jesse_lee_peterson"],
+    ["https://www.youtube.com/watch?v=430AifBjTsc&list=PLP8MR2_RbLUErFTPy5oI_chngHwid-tQ2", "jesse_lee_peterson/the_fallen_state"],
+
+    # Louis Rossman
     ["https://www.youtube.com/watch?v=mGj_Jm2RrY4&list=PLkVbIsAWN2lvpys3pHlAHXGEamiDEWiRN", "louis_rossman/core_philosophies_and_rants"],
     ["https://www.youtube.com/watch?v=KzOcpheBMDo&list=PLkVbIsAWN2luLeViTZ499dZNsZHavrGBE", "louis_rossman/business_advice"],
     ["https://www.youtube.com/watch?v=P_6vDLq64gE&list=PLkVbIsAWN2ltjJ6bupvWuUoCPv_FDGy5q", "louis_rossman/time_management"],
@@ -65,6 +70,8 @@ AUDIO = [
     ["https://www.youtube.com/watch?v=B_DqbAlaKd0&list=PLJdwBXWZFqz6XhjKaqrjwwjRBecPwimo-", "rekieta_law/taylor_swift_sued"],
     ["https://www.youtube.com/watch?v=6TgwXIDCl4U&list=PLJdwBXWZFqz6QboVcOKpXpsRAIn9k4oM-", "rekieta_law/gun_control"],
     ["https://www.youtube.com/watch?v=6EofaLD42hE&list=PLJdwBXWZFqz7ECStt50OFTZCZjqa5pss3", "rekieta_law/a_google_manifesto"],
+    ["https://www.youtube.com/watch?v=I9T7tTqGKo4&list=PLJdwBXWZFqz5JVeZmWcGIo2j8CXb3vqwE", "rekieta_law/political_news"],
+    ["https://www.youtube.com/watch?v=EuC80LoH_Jk&list=PLJdwBXWZFqz55XuzYX2RMnOgQWGzIvIaW", "rekieta_law/past_videos"],
 
     ["https://www.youtube.com/c/VALUETAINMENT/videos", "valuetainment"],
 
@@ -103,7 +110,6 @@ AUDIO = [
     ["https://www.youtube.com/c/skagg3/videos", "matt_christiansen"],
     ["https://www.youtube.com/c/JesseLeePeterson1/videos", "jesse_lee_peterson"],
 	["https://www.youtube.com/watch?v=P6Ogx_wg3fU&list=PLyQSN7X0ro21TqRT8493kIR--yvy-2P8E", "walter_lewin/interviews"],
-    ["https://www.youtube.com/c/JesseLeePeterson1/videos", "jesse_lee_peterson"],
 ]
 
 # --format bestvideo
