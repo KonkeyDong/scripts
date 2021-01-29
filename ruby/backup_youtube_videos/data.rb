@@ -105,10 +105,13 @@ AUDIO = [
     ["https://www.youtube.com/watch?v=Knv7ZwIBmvs&list=PLEbhOtC9klbDWsT-fWpJs6NV-t3w9uFK-", "rubin_report/free_speech"],
     ["https://www.youtube.com/watch?v=LzwLXFB_2_g&list=PLEbhOtC9klbDV-LWpYW7wF5_3tZsvAibc", "rubin_report/guns"],
     ["https://www.youtube.com/watch?v=H9xC1psOINg&list=PLEbhOtC9klbBKHGtmnTbH1zX92vfKfs-y", "rubin_report/law"],
+
     ["https://www.youtube.com/c/lexfridman/videos", "lex_fridman"],
     ["https://www.youtube.com/c/AdamcastIRL/videos", "adamcast_irl"],
     ["https://www.youtube.com/c/skagg3/videos", "matt_christiansen"],
 	["https://www.youtube.com/watch?v=P6Ogx_wg3fU&list=PLyQSN7X0ro21TqRT8493kIR--yvy-2P8E", "walter_lewin/interviews"],
+
+    ["https://www.youtube.com/c/UpperEchelonGamersUEG/videos", "upper_echelon_gamers"], # may need video for some videos, but the world news stuff can be pure audio.
 ]
 
 # --format bestvideo
