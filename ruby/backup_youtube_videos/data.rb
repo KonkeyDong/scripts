@@ -72,6 +72,7 @@ AUDIO = [
     ["https://www.youtube.com/watch?v=6EofaLD42hE&list=PLJdwBXWZFqz7ECStt50OFTZCZjqa5pss3", "rekieta_law/a_google_manifesto"],
     ["https://www.youtube.com/watch?v=I9T7tTqGKo4&list=PLJdwBXWZFqz5JVeZmWcGIo2j8CXb3vqwE", "rekieta_law/political_news"],
     ["https://www.youtube.com/watch?v=EuC80LoH_Jk&list=PLJdwBXWZFqz55XuzYX2RMnOgQWGzIvIaW", "rekieta_law/past_videos"],
+	["https://www.youtube.com/c/RekietaLawLive/videos", "rekieta_law/live"],
 
     ["https://www.youtube.com/c/VALUETAINMENT/videos", "valuetainment"],
 
@@ -112,6 +113,7 @@ AUDIO = [
 	["https://www.youtube.com/watch?v=P6Ogx_wg3fU&list=PLyQSN7X0ro21TqRT8493kIR--yvy-2P8E", "walter_lewin/interviews"],
 
     ["https://www.youtube.com/c/UpperEchelonGamersUEG/videos", "upper_echelon_gamers"], # may need video for some videos, but the world news stuff can be pure audio.
+    ["https://www.youtube.com/c/SlightlyOffensive/videos", "slightly_offensive"],
 ]
 
 # --format bestvideo
