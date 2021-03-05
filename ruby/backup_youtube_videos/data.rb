@@ -114,6 +114,7 @@ AUDIO = [
 
     ["https://www.youtube.com/c/UpperEchelonGamersUEG/videos", "upper_echelon_gamers"], # may need video for some videos, but the world news stuff can be pure audio.
     ["https://www.youtube.com/c/SlightlyOffensive/videos", "slightly_offensive"],
+    ["https://www.youtube.com/c/redonkulaspopp/videos", "terrence_popp"],
 ]
 
 # --format bestvideo
