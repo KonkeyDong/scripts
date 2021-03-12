@@ -119,3 +119,12 @@ if [[ -f ${BASH_ALIASES} ]]
 then
     source ${BASH_ALIASES}
 fi
+
+# Delete current git branch and update develop
+DAU()
+{
+    local branch=$(git rev-parse --abbrev-ref HEAD)
+    git checkout develop
+    git pull
+    git branch -D $branch
+}
