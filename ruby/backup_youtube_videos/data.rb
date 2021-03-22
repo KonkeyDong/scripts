@@ -15,8 +15,6 @@ AUDIO = [
 
     ["https://www.youtube.com/channel/UCtUId5WFnN82GdDy7DgaQ7w/videos", "better_ideas"],
     ["https://www.youtube.com/channel/UC5tEELgWBfKbA9fVPRzBzPQ/videos", "coach_red_pill"],
-    ["https://www.youtube.com/channel/UCc7-Rr-wSO530znK2ny05JQ/videos", "donovan_sharpe"],
-    ["https://www.youtube.com/watch?v=TJFhZIjTIhU&list=PL68d6MdnLpLs4HVxM5npoRzidNlMgZn_a", "george_bruno/daybreak_show"],
     ["https://www.youtube.com/c/JaymeEdwardsMedia/videos", "health_software_developer"],
     ["https://www.youtube.com/watch?v=L6dQH0CT3B8&list=PL7ukuCEjUSlxLH3WbxnlG8MlahVoPpfbz", "HuMAN"],
     ["https://www.youtube.com/watch?v=T5yyHZwTOpA&list=PLIBtb_NuIJ1wCrBmN2Z3jcQ4vvmOEi-7-", "prager_u/fireside_chat"],
@@ -88,7 +86,6 @@ AUDIO = [
     ["https://www.youtube.com/c/TheLarryElderShowRadio/videos", "larry_elder_show"],
     ["https://www.youtube.com/channel/UCVYM293tSks8SxnHS-UUhzA/videos", "molyneux_resurrected"],
     ["https://www.youtube.com/channel/UCkpI0T2rD5N3tN5R3BQqhkw/videos", "migtown_podcast"],
-    ["https://www.youtube.com/21/videos", "21_studios"],
 
     # rubin report
     ["https://www.youtube.com/watch?v=OEm8x8FUvGo&list=PLEbhOtC9klbCr0iN2ANJbaV477B0eSpc6", "rubin_report/politics"],
