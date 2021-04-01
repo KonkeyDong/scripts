@@ -112,6 +112,8 @@ AUDIO = [
     ["https://www.youtube.com/c/UpperEchelonGamersUEG/videos", "upper_echelon_gamers"], # may need video for some videos, but the world news stuff can be pure audio.
     ["https://www.youtube.com/c/SlightlyOffensive/videos", "slightly_offensive"],
     ["https://www.youtube.com/c/redonkulaspopp/videos", "terrence_popp"],
+    ["https://www.youtube.com/watch?v=v6JW4OfLFbI&list=PL3e1orPYt_4YwSmw1vhXbxfm4fHZdlCkP", "steven_crowder/podcasts"],
+    ["https://www.youtube.com/watch?v=WtftZPL-k7Y&list=PL3e1orPYt_4ZHGjuivZFsyJ81RL7j7_E1", "steven_crowder/change_my_mind"],
 ]
 
 # --format bestvideo
@@ -176,5 +178,5 @@ VIDEO = [
 	["https://www.youtube.com/c/Simplehistory/videos", "simple_history"],
 	["https://www.youtube.com/user/PrisonPlanetLive/videos", "paul_joseph_watson"],
 	["https://www.youtube.com/c/SoldierofSteel/videos", "john_burk"],
-	["", ""],
+	["https://www.youtube.com/watch?v=MK9F4mIG-iE&list=PL3e1orPYt_4bfQetXouN4HrjXanxQxpqc", "steven_crowser/web_shorts"],
 ]
