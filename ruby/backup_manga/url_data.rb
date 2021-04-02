@@ -3,6 +3,7 @@
 # The second argument is the name of the book.
 
 URL_DATA = [
-    ["http://www.tenmanga.com/book/Dragon+Ball.html", "dragon_ball"]
-    #["https://manganelo.com/manga/kxqh9261558062112", "attack_on_titan"]
+    #["http://www.tenmanga.com/book/Dragon+Ball.html", "dragon_ball"],
+    ["http://www.tenmanga.com/book/Attack+On+Titan+-+Before+The+Fall.html", "attack_on_titan_-_before_the_fall"],
+    ["http://www.tenmanga.com/book/Yu+Yu+Hakusho.html", "yu_yu_hakusho"],
 ]

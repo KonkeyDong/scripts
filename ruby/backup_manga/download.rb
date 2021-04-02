@@ -13,25 +13,19 @@ def pre_download(url)
     html = Nokogiri::HTML(open(url, read_timeout: READ_TIEMOUT))
     html.css('.chapter-name.short')
                    .reverse
-                   .map do |chapter|
+                   .each_with_index
+                   .map do |chapter, index|
                         data = chapter.css('a').first
                         {
-                            title: data.text.downcase.gsub(/\s+/, '_').gsub(/^ch/, 'chapter'),
+                            title: ["chapter", (index + 1).to_s.rjust(4, "0")].join('_'),
                             href: data["href"]
                         }
                    end
 end
 
-def pad_chapter_numbers(title)
-    chapter, number = title.split('_')
-    pad_by_this_amount = number =~ /\./ ? 6 : 4
-
-    [chapter, number.rjust(pad_by_this_amount, "0")].join('_')
-end
-
 def download(chapters_and_href, book_name, archive, archive_hash)
     chapters_and_href.each do |data|
-        title = pad_chapter_numbers(data[:title])
+        title = data[:title]
         href = data[:href]
 
         puts "Downloading #{title}..."
@@ -70,8 +64,11 @@ URL_DATA.each do |(url, book_name)|
     puts "Now downloading [#{book_name}]..."
     chapters_and_href = pre_download(url)
 
+    directory = [BASE_DIRECTORY_PATH, book_name].join("/")
+    FileUtils.mkdir_p(directory)
+
     # look through archive to avoid unnecessary rewrites.
-    archive = [BASE_DIRECTORY_PATH, book_name, "archive.txt"].join("/")
+    archive = [directory, "archive.txt"].join("/")
     FileUtils.touch(archive) # create file if it doesn't exist
     archive_hash = File.open(archive).readlines.map(&:chomp).map { |url| [url, true]}.to_h
 
