@@ -7,10 +7,10 @@ require 'nokogiri'
 require_relative './url_data'
 
 BASE_DIRECTORY_PATH = '/media/HDD_4TB_01/manga'
-READ_TIEMOUT = 30
+READ_TIMEOUT = 30
 
 def pre_download(url)
-    html = Nokogiri::HTML(open(url, read_timeout: READ_TIEMOUT))
+    html = Nokogiri::HTML(open(url, read_timeout: READ_TIMEOUT))
     html.css('.chapter-name.short')
                    .reverse
                    .each_with_index
@@ -32,7 +32,7 @@ def download(chapters_and_href, book_name, archive, archive_hash)
         directory = [BASE_DIRECTORY_PATH, book_name, title].join("/")
         FileUtils.mkdir_p(directory)
 
-        html = Nokogiri::HTML(open(href, read_timeout: READ_TIEMOUT)).css('.sl-page option')
+        html = Nokogiri::HTML(open(href, read_timeout: READ_TIMEOUT)).css('.sl-page option')
         html[0...(html.length / 2)].each_with_index do |page, index|
             page_url = page["value"]
 
@@ -42,7 +42,7 @@ def download(chapters_and_href, book_name, archive, archive_hash)
                 next
             end
 
-            image_url = Nokogiri::HTML(open(page_url, read_timeout: READ_TIEMOUT)).css('.manga_pic').first["src"]
+            image_url = Nokogiri::HTML(open(page_url, read_timeout: READ_TIMEOUT)).css('.manga_pic').first["src"]
             file_extension = image_url.match(/\.(\w+)$/).captures.first.downcase
             file_name = (index + 1).to_s.rjust(3, "0") + ".#{file_extension}"
 
