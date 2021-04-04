@@ -7,7 +7,7 @@ require 'nokogiri'
 require_relative './url_data'
 
 BASE_DIRECTORY_PATH = '/media/HDD_4TB_01/manga'
-READ_TIMEOUT = 30
+READ_TIMEOUT = 30 # in seconds
 
 def pre_download(url)
     html = Nokogiri::HTML(open(url, read_timeout: READ_TIMEOUT))
@@ -15,9 +15,13 @@ def pre_download(url)
         .reverse
         .each_with_index
         .map do |chapter, index|
-             data = chapter.css('a').first
+             data = chapter.css('a')
+                           .first
+
              {
-                 title: ["chapter", (index + 1).to_s.rjust(4, "0")].join('_'),
+                 title: ["chapter", (index + 1).to_s
+                                               .rjust(4, "0")]
+                                               .join('_'),
                  href: data["href"]
              }
         end
@@ -32,7 +36,8 @@ def download(chapters_and_href, book_name, archive, archive_hash)
         FileUtils.mkdir_p(directory)
 
         puts "Downloading #{title}..."
-        html = Nokogiri::HTML(open(href, read_timeout: READ_TIMEOUT)).css('.sl-page option')
+        html = Nokogiri::HTML(open(href, read_timeout: READ_TIMEOUT))
+                       .css('.sl-page option')
 
         # The website doubles the amount of chapter pages in the source code for some reason.
         # So, only take from thef irst half to avoid doubling the amount of pages in the directory.
@@ -48,7 +53,12 @@ def download(chapters_and_href, book_name, archive, archive_hash)
             image_url = Nokogiri::HTML(open(page_url, read_timeout: READ_TIMEOUT))
                                 .css('.manga_pic')
                                 .first["src"]
-            file_extension = image_url.match(/\.(\w+)$/).captures.first.downcase
+
+            file_extension = image_url.match(/\.(\w+)$/)
+                                      .captures
+                                      .first
+                                      .downcase
+
             file_name = (index + 1).to_s.rjust(3, "0") + ".#{file_extension}"
 
             # write image file
@@ -75,9 +85,15 @@ URL_DATA.each do |(url, book_name)|
     # look through archive to avoid unnecessary rewrites.
     archive = [directory, "archive.txt"].join("/")
     FileUtils.touch(archive) # create file if it doesn't exist
-    archive_hash = File.open(archive).readlines.map(&:chomp).map { |url| [url, true]}.to_h
+    archive_hash = File.open(archive)
+                       .readlines
+                       .map(&:chomp)
+                       .map { |url| [url, true] }.to_h
 
     download(chapters_and_href, book_name, archive,  archive_hash)
+
+    # prevent output hanging after sufficient output messages.
+    STDOUT.flush
 end
 
 puts "Complete!"
