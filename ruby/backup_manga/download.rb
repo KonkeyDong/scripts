@@ -29,13 +29,14 @@ end
 
 def download(chapters_and_href, book_name, archive, archive_hash)
     chapters_and_href.each do |data|
+        STDOUT.flush
         title = data[:title]
         href = data[:href]
 
         directory = [BASE_DIRECTORY_PATH, book_name, title].join("/")
         FileUtils.mkdir_p(directory)
 
-        puts "Downloading #{title}..."
+        puts "Downloading book #{book_name}, chapter #{title}..."
         html = Nokogiri::HTML(open(href, read_timeout: READ_TIMEOUT))
                        .css('.sl-page option')
 
