@@ -19,6 +19,7 @@ def pre_download(url)
                            .first
 
              {
+
                  title: ["chapter", (index + 1).to_s
                                                .rjust(4, "0")]
                                                .join('_'),
@@ -28,15 +29,22 @@ def pre_download(url)
 end
 
 def download(chapters_and_href, book_name, archive, archive_hash)
-    chapters_and_href.each do |data|
+    first_write = true
+    chapters_and_href.each_with_index do |data, chapter_index|
         STDOUT.flush
         title = data[:title]
         href = data[:href]
 
+        # Skip downloading the chapter/pages if we already have the chapter downloaded!
+        if archive_hash[href]
+            puts "Skipping [#{title}] as it has already been downloaded."
+            next
+        end
+
         directory = [BASE_DIRECTORY_PATH, book_name, title].join("/")
         FileUtils.mkdir_p(directory)
 
-        puts "Downloading book #{book_name}, chapter #{title}..."
+        puts "Downloading book #{book_name}, #{title}..."
         html = Nokogiri::HTML(open(href, read_timeout: READ_TIMEOUT))
                        .css('.sl-page option')
 
@@ -45,11 +53,6 @@ def download(chapters_and_href, book_name, archive, archive_hash)
         html[0...(html.length / 2)].each_with_index do |page, index|
             page_url = page["value"]
 
-            if archive_hash[page_url]
-                name = (index + 1).to_s.rjust(4, "0") + ".image"
-                puts "Skipping [#{name}] as it has already been downloaded."
-                next
-            end
 
             image_url = Nokogiri::HTML(open(page_url, read_timeout: READ_TIMEOUT))
                                 .css('.manga_pic')
@@ -60,19 +63,26 @@ def download(chapters_and_href, book_name, archive, archive_hash)
                                       .first
                                       .downcase
 
-            file_name = (index + 1).to_s.rjust(3, "0") + ".#{file_extension}"
+            file_name = directory + '/' + (index + 1).to_s.rjust(3, "0") + ".#{file_extension}"
+
+            # avoid re-writing the page
+            if File.file?(file_name)
+                puts "file name #{file_name} already written"
+                next
+            end
 
             # write image file
             # puts "#{directory}/#{file_name} | #{image_url}"
             open(image_url) do |image|
-                File.open("#{directory}/#{file_name}", "wb") do |file|
+                File.open(file_name, "wb") do |file|
                     file.write(image.read)
                 end
             end
-
-            # update the archive file
-            File.write(archive, "#{page_url}\n", mode: 'a')
         end
+
+        # update the archive file
+        #href = "#\n#{href}" if File.size(archive) > 0 and first_write
+        File.write(archive, "#{href}\n", mode: 'a')
     end
 end
 
