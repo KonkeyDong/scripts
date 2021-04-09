@@ -7,6 +7,7 @@
 # --format bestaudio
 AUDIO = [
     ["https://www.youtube.com/user/AaronClarey/videos", "aaron_clarey"],
+    ["https://www.youtube.com/c/OlderBrother/videos", "aaron_clarey/older_brother"],
     ["https://www.youtube.com/user/artofmanliness/videos", "art_of_manliness"],
 
     # Better Bachelor / Odd Man Out
@@ -15,6 +16,7 @@ AUDIO = [
 
     ["https://www.youtube.com/channel/UCtUId5WFnN82GdDy7DgaQ7w/videos", "better_ideas"],
     ["https://www.youtube.com/channel/UC5tEELgWBfKbA9fVPRzBzPQ/videos", "coach_red_pill"],
+    ["https://www.youtube.com/channel/UCc7-Rr-wSO530znK2ny05JQ/videos", "donovan_sharpe"],
     ["https://www.youtube.com/c/JaymeEdwardsMedia/videos", "health_software_developer"],
     ["https://www.youtube.com/watch?v=L6dQH0CT3B8&list=PL7ukuCEjUSlxLH3WbxnlG8MlahVoPpfbz", "HuMAN"],
     ["https://www.youtube.com/watch?v=T5yyHZwTOpA&list=PLIBtb_NuIJ1wCrBmN2Z3jcQ4vvmOEi-7-", "prager_u/fireside_chat"],
