@@ -48,6 +48,8 @@ def download(chapters_and_href, book_name, archive, archive_hash)
         html = Nokogiri::HTML(open(href, read_timeout: READ_TIMEOUT))
                        .css('.sl-page option')
 
+        archive_flags = []
+
         # The website doubles the amount of chapter pages in the source code for some reason.
         # So, only take from thef irst half to avoid doubling the amount of pages in the directory.
         html[0...(html.length / 2)].each_with_index do |page, index|
@@ -71,19 +73,40 @@ def download(chapters_and_href, book_name, archive, archive_hash)
                 next
             end
 
-            # write image file
-            # puts "#{directory}/#{file_name} | #{image_url}"
-            open(image_url) do |image|
-                File.open(file_name, "wb") do |file|
-                    file.write(image.read)
-                end
-            end
+            archive_flags.push write_image(image_url, file_name, directory, href)
         end
 
         # update the archive file
         #href = "#\n#{href}" if File.size(archive) > 0 and first_write
-        File.write(archive, "#{href}\n", mode: 'a')
+        unless archive_flags.include?(false)
+            File.write(archive, "#{href}\n", mode: 'a')
+        else
+            puts "Skipping writing to archive..."
+        end
     end
+end
+
+def write_image(image_url, file_name, directory, href)
+    # write image file
+    # puts "#{directory}/#{file_name} | #{image_url}"
+    open(image_url) do |image|
+        File.open(file_name, "wb") do |file|
+            file.write(image.read)
+        end
+    end
+
+    return true
+rescue
+    error_file = "#{directory}/errors.txt"
+    puts "Error written to: [#{error_file}]"
+    File.open(error_file, "a") do |file|
+        file.write("Hyper link reference [#{href}] had a problem downloading an image!\n")
+        file.write("Image URL: #{image_url}\n")
+        file.write("File name: #{file_name}\n")
+        file.write("\n") # new line
+    end
+
+    return false
 end
 
 URL_DATA.each do |(url, book_name)|
