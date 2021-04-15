@@ -12,6 +12,7 @@ alias update='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove'
 alias groot="cd ${GIT_BASE}"
 alias gscripts="cd ${GIT_BASE}/scripts"
 alias gexpense="cd ${GIT_BASE}/expense_report"
+alias gwebs="cd ${GIT_BASE}/web_scrapers"
 
 # shred in parallel command
 alias Shred="nice -n 19 /usr/bin/ruby ~/git_projects/scripts/ruby/Executables/shred.rb"
