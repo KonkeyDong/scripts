@@ -31,4 +31,4 @@ alias lights_on='echo 1 | sudo tee /sys/devices/platform/sony-laptop/kbd_backlig
 alias lights_off='echo 0 | sudo tee /sys/devices/platform/sony-laptop/kbd_backlight'
 
 # PI ssh
-alias pissh='ssh pi@192.168.1.81'
+alias pissh='ssh ubuntu@192.168.1.81'
