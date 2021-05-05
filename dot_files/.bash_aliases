@@ -11,6 +11,7 @@ alias update='sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove'
 # git project dir
 alias groot="cd ${GIT_BASE}"
 alias gscripts="cd ${GIT_BASE}/scripts"
+alias gcode="cd ${GIT_BASE}/coding_challenges"
 alias gexpense="cd ${GIT_BASE}/expense_report"
 alias gwebs="cd ${GIT_BASE}/web_scrapers"
 
