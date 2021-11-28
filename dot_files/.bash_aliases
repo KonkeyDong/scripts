@@ -23,7 +23,7 @@ alias sqlitestudio='/opt/SQLiteStudio/sqlitestudio'
 alias sqlstudio=sqlitestudio
 
 # youtube
-alias yt="youtube-dl --add-metadata -ic" # Download video link
+alias yt="yt-dlp --format best -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
 alias YT="youtube-viewer"
 

@@ -4,7 +4,6 @@
 sudo apt install -y \
     neovim \
     ntfs-3g \
-    youtube-dl \
     curl \
     ranger \
     vlc \
@@ -26,6 +25,10 @@ sudo apt install -y \
 
 # useful ruby gems. required for the parallel shred command
 sudo gem install byebug parallel-forkmanager bundle ap crack nokogiri
+
+# download youtube-dl alternative: yt-dlp (old youtube-dl is inactive now)
+sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp
 
 #Notes on parallel-forkmanager:
 # https://www.rubydoc.info/gems/parallel-forkmanager/1.5.1/Parallel/ForkManager
