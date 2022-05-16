@@ -18,7 +18,10 @@ sudo apt install -y \
     libssl-dev \
     python3-dev \
     python3 \
-    python3-pip
+    python3-pip \
+    ncdu \
+    renameutils # qmv command
+
 
 # Note: to install ruby byebug and parallel-forkmanager,
 #       you need to install ruby and ruby-dev!
@@ -67,6 +70,8 @@ cp -r ${GIT_CONFIG_DIR}/* ${CONFIG_DIR}
 echo "run [download_vscode.sh] to download VS Code separately."
 echo "run [download_joplin.sh] to download Joplin separately."
 echo "run [download_docker.sh] to download Docker separately."
+echo "run [download_plex.sh] to download Plex Media Server separately."
+echo "run [download_nextcloud.sh] to download Nextcloud separately."
 
 # add aliases
 source ${BASH_RC}

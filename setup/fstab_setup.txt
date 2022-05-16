@@ -1,0 +1,6 @@
+LABEL=writable	/	 ext4	defaults	0 0
+LABEL=system-boot       /boot/firmware  vfat    defaults        0       1
+UUID=000f8735-8fd1-4e00-887e-a5376f2af66d	/media/HDD_4TB_01	ext4	auto,nofail,rw,sync,user	0	0
+UUID=2eb19965-7c60-4a44-a546-a309c572e076	/media/HDD_4TB_02	ext4	auto,nofail,rw,sync,user	0	0
+UUID=7d4b67c9-af3e-41bb-a91f-24b1d50147b9	/media/HDD_16TB_01	ext4	auto,nofail,rw,async,user	0	0
+#UUID=30D8D48E-3A01-48B4-92C4-AE19A12FB337	/media/4TB_MEDIA	ext4	auto,nofail,rw,async,user	0	0
