@@ -16,7 +16,8 @@ alias gexpense="cd ${GIT_BASE}/expense_report"
 alias gwebs="cd ${GIT_BASE}/web_scrapers"
 
 # shred in parallel command
-alias Shred="nice -n 19 /usr/bin/ruby ~/git_projects/scripts/ruby/Executables/shred.rb"
+alias Shred="nice -n 19 /usr/local/bin/ruby ~/git_projects/scripts/ruby/executables/shred.rb"
+alias ruby="/usr/local/bin/ruby"
 
 # sqlite
 alias sqlitestudio='/opt/SQLiteStudio/sqlitestudio'
@@ -33,3 +34,5 @@ alias lights_off='echo 0 | sudo tee /sys/devices/platform/sony-laptop/kbd_backli
 
 # PI ssh
 alias pissh='ssh ubuntu@192.168.1.81'
+
+alias qmv='qmv -e nvim -o width=85,spaces'
