@@ -35,6 +35,7 @@ alias lights_off='echo 0 | sudo tee /sys/devices/platform/sony-laptop/kbd_backli
 # PI ssh
 alias pissh='ssh ubuntu@192.168.1.81'
 
+alias media="cd ${MEDIA_ROOT}"
 alias tv="cd ${MEDIA_ROOT}/TV\ Shows"
 alias movies="cd ${MEDIA_ROOT}/Movies"
 alias anime="cd ${MEDIA_ROOT}/anime/tv_shows"

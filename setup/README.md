@@ -5,13 +5,13 @@
 1. `cd ~/git_projects/scripts/setup`
 1. `bash run_me.sh`
 
-### Notes:
+## Notes:
 
-#### [Markdown File Documentation](https://guides.github.com/features/mastering-markdown/)
+### [Markdown File Documentation](https://guides.github.com/features/mastering-markdown/)
 
 ---
 
-#### Setting Up Git Account:
+## Setting Up Git Account:
 ```
 $ git config --global user.name "<username>"
 $ git config --global user.email "<email@address>"
@@ -19,7 +19,7 @@ $ git config --global user.email "<email@address>"
 
 ---
 
-#### Fixing "No permission on mounted HDD"
+## Fixing "No permission on mounted HDD"
 I assume the new disk shows in your file manager and can be mounted by clicking on it, correct?
 
 1. Locate the disk you want to set your permissions with using `sudo fdisk -l`
@@ -35,7 +35,7 @@ I assume the new disk shows in your file manager and can be mounted by clicking 
 
 ---
 
-#### FSTAB Config
+## FSTAB Config
 
 If you have a connected eHDD that you want to mount on boot, then do the following:
 
@@ -55,7 +55,7 @@ See also: https://kenfavors.com/code/mounting-an-external-drive-on-ubuntu-server
 
 ---
 
-#### Disable/Enable Ubuntu Server Sleep Mode
+## Disable/Enable Ubuntu Server Sleep Mode
 
 **Disable**: `sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target`
 
@@ -69,7 +69,7 @@ See this link for questions: https://askubuntu.com/a/858617
 
 ---
 
-#### Setting a Static IP Address
+## Setting a Static IP Address
 
 In my case, I had to edit the `/etc/netplan/50-cloud-init.yaml` file like so (note that this is a `.yaml` file; spacing matters!):
 
@@ -90,7 +90,8 @@ See this for help: https://linuxize.com/post/how-to-configure-static-ip-address-
 
 ---
 
-#### Install & Enable SSH Server
+## Install & Enable SSH Server
+
 ```bash
 sudo apt install openssh-server
 sudo systemctl enable ssh
@@ -101,7 +102,7 @@ See [this link](https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-serve
 
 ---
 
-#### Generate SSH Key Pair
+## Generate SSH Key Pair
 ```bash
 mkdir -p ~/.ssh
 ssh-keygen -t rsa
@@ -116,7 +117,7 @@ See [this link](https://www.siteground.com/kb/generate_ssh_key_in_linux/) for re
 
 ---
 
-#### Disable SSH Prompting for Password
+## Disable SSH Prompting for Password
 
 Make sure that your `~/.ssh` folder and `~/.ssh/authorized_keys` file have `700` permissions. [See this link for more details.](https://unix.stackexchange.com/a/36687)
 
@@ -124,8 +125,28 @@ In addition, try running `ssh-copy-id -i <user>@<ip_address>` **from your local 
 
 ---
 
-#### VS Code Extensions
+## VS Code Extensions
 1. Markdown Preview Enhanced by Yiyi Wang (**Ctrl + k v** to display markdown in separate pane)
 1. markdownlint by David Anson
 1. Clojure by Andrew Lisin
 1. Ruby by Peng Lv
+
+----
+
+## Install Pi-Hole
+### Pi-Hole Installer "Whip Tail" Dialogue Not Reading Keyboard Inputs
+
+The offical docks will say to run the following:
+
+```bash
+curl -sSL https://install.pi-hole.net | sudo PIHOLE_SKIP_OS_CHECK=true bash
+```
+
+When the "Whip Tail" dialogue appears, none of your keyboard inputs will register (notably the "Enter" key). Apparently, you need to run `sudo bash` first, then the command without the `sudo bash` in the command, like so:
+
+```bash
+sudo bash
+curl -sSL https://install.pi-hole.net | PIHOLE_SKIP_OS_CHECK=true bash
+```
+
+https://github.com/pi-hole/pi-hole/issues/4693#issuecomment-1120533812
