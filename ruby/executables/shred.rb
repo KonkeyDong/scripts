@@ -1,13 +1,13 @@
 #!/usr/bin/ruby
 
-require 'byebug'
-require 'forkmanager'
+#require 'byebug'
+#require 'forkmanager'
 require 'getoptlong'
 require_relative '../classes/utilities'
 require_relative '../classes/traverse'
 
 options = {
-    num_threads: 4
+    num_threads: 1
 }
 
 getopts = GetoptLong.new(
@@ -28,7 +28,7 @@ getopts.each do |opt, arg|
                 Sets the numbers of threads n for parallel execution.
                 Defaults to 4.
                 Warning: avoid using many threads on HDDs.
-    
+
             --help
                 Display this help doc and exit.
         HEREDOC
@@ -45,9 +45,9 @@ exit 0 unless Utilities::prompt("Do you want to shred everything in the director
 
 traverse = Traverse.new(directory)
 
-pm = Parallel::ForkManager.new(options[:num_threads])
+#pm = Parallel::ForkManager.new(options[:num_threads])
 traverse.files.each do |file|
-    pm.start(file) && next
+#    pm.start(file) && next
 
     puts "Shredding file: [#{file}]"
 
@@ -55,9 +55,9 @@ traverse.files.each do |file|
     # the C code looks sophisticated, but it would add portability.
     %x(/usr/bin/shred -uz "#{file}")
 
-    pm.finish(0)
+#    pm.finish(0)
 end
-pm.wait_all_children
+#pm.wait_all_children
 
 puts "Removing directories..."
 traverse.directories.each { |directory| Dir.rmdir(directory) }

@@ -38,6 +38,7 @@ ARGV.each do |file|
   # Remove annoying quotes to make renaming and running system commands easier
   new_file_name = file.gsub("'", "")
                  .gsub(/"/, "")
+                 .gsub("&", "and")
 
   # the mv command will fail if the two names are the same.
   FileUtils.mv(file, new_file_name) unless file == new_file_name
@@ -56,7 +57,9 @@ ARGV.each do |file|
   new_dest = "#{trash_path}/#{dir_name}/."
   FileUtils.mkdir_p(new_dest)
 
+  puts ""
   puts "Now converting #{input_path}..."
+  puts ""
 
   command = [
     "nice -n 19",
@@ -72,7 +75,10 @@ ARGV.each do |file|
   # $? is the Global Variable for Exit Status Code.
   # Should be either true, false, or nil.
   if $?
+    puts ""
     puts "Finished! moving to: #{new_dest}..."
+    puts ""
+
     FileUtils.mv(input_path, new_dest)
   end
 end
