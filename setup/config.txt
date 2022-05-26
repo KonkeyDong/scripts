@@ -1,5 +1,6 @@
 # Change this location to your git folder root
 GIT_BASE=~/git_projects
+MEDIA_ROOT="/media/HDD_16TB_01/videos"
 
 GIT_DOT_FILES=${GIT_BASE}/scripts/dot_files
 GIT_BASH_ALIASES=${GIT_DOT_FILES}/.bash_aliases
@@ -13,3 +14,4 @@ BASH_RC=~/.bashrc
 
 # directories
 CONFIG_DIR=~/.config
+
