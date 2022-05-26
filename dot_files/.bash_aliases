@@ -36,5 +36,5 @@ alias lights_off='echo 0 | sudo tee /sys/devices/platform/sony-laptop/kbd_backli
 alias pissh='ssh ubuntu@192.168.1.81'
 
 alias qmv='qmv -e nvim -o width=90,spaces'
-alias convert='ruby /home/ubuntu/git_projects/scripts/ruby/executables/convert_mvk_to_mp4.rb *.mkv'
+alias convert='ruby /home/ubuntu/git_projects/scripts/ruby/executables/convert_mvk_to_mp4.rb '
 
