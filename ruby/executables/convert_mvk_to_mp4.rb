@@ -32,7 +32,7 @@ def aac_flag(flag)
 end
 
 ARGV.each do |file|
-  file.chomp!
+  file = file.chomp
   next if file == ""
 
   # Remove annoying quotes to make renaming and running system commands easier
