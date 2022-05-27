@@ -63,7 +63,8 @@ input_path.sub(input_ext, ".mp4")
 end
 
 # Read files supplied from command line (ls *.mkv)
-ARGV.each do |file|
+ARGV.each_with_index do |file, index|
+  index += 1
   file = file.chomp
   next if file == ""
 
@@ -90,7 +91,7 @@ ARGV.each do |file|
   FileUtils.mkdir_p(new_dest) unless options[:debug]
 
   puts ""
-  puts "Now converting #{input_path}..."
+  puts "Now converting #{input_path} (#{index} / #{ARGV.length})"
   puts ""
 
   command = [
