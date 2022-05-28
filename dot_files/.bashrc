@@ -129,3 +129,23 @@ DAU()
     git branch -D $branch
 }
 
+MI()
+{
+    local file="$1"
+    local video=$(mediainfo --InForm="Video;%Format%" "${file}")
+    local audio=$(mediainfo --InForm="Audio;%Format%" "${file}")
+    local width=$(mediainfo --InForm="Video;%Width%" "${file}")
+    local height=$(mediainfo --InForm="Video;%Height%" "${file}")
+
+    echo "Resolution : $width X $height"
+
+    if [[ "$video" == "AVC" ]]
+    then
+        echo "Video Codec: $video (H264)"
+    else
+        echo "Video Codec: $video"
+    fi
+
+    echo "Audio Codec: $audio"
+}
+
