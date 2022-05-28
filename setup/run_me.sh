@@ -20,6 +20,7 @@ sudo apt install -y \
     python3 \
     python3-pip \
     ncdu \
+    mediainfo \
     renameutils # qmv command
 
 
