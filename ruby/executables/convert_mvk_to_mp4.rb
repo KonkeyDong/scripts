@@ -93,11 +93,29 @@ def get_audio_codec(input_path)
   output.chomp
 end
 
+def get_number_of_audio_channels(input_path)
+  # 2 audio channels is what we want
+  # mediainfo --InForm="Audio;%Channel(s)%"
+  command = [
+    "mediainfo",
+    '--InForm="Audio;%Channel(s)%"',
+    "'#{input_path}'"
+  ].join(" ")
+  output = `#{command}`
+  output.chomp
+end
+
+if options[:debug]
+  puts "PRINTING ARGV CONTENTS..."
+  puts ARGV
+end
+
 # Read files supplied from command line (ls *.mkv)
 ARGV.each_with_index do |file, index|
   index += 1
   file = file.chomp
   next if file == ""
+  next unless File.exist?(file)
 
   # Remove annoying quotes to make renaming and running system commands easier
   new_file_name = file.gsub("'", "")
@@ -124,17 +142,19 @@ ARGV.each_with_index do |file, index|
 
   video_codec = get_video_codec(input_path)
   audio_codec = get_audio_codec(input_path)
+  number_of_channels = get_number_of_audio_channels(input_path)
 
-  puts "Video Codec: #{video_codec}"
-  puts "Audio Codec: #{audio_codec}"
+  puts "Video Codec             : #{video_codec}"
+  puts "Audio Codec             : #{audio_codec}"
+  puts "Number of Audio Channels: #{number_of_channels}"
 
   unless video_codec.upcase == "AVC"
     puts "Video codec is not AVC (H264) and will take too long to process."
     exit 1
   end
 
-  unless audio_codec.upcase == "AAC"
-    puts "Audio codec is not AAC; setting --aac flag to true"
+  if audio_codec.upcase != "AAC" || number_of_channels&.to_i > 2
+    puts "Audio codec is not AAC (or number of audio channels is greater than 2); setting --aac flag to true"
     options[:aac] = true
   end
 
@@ -155,6 +175,7 @@ ARGV.each_with_index do |file, index|
     "nice -n 19",
     "ffmpeg -i '#{input_path_temp}'",
     h264_flag(options[:h264]),
+    "-ac 2",
     aac_flag(options[:aac]),
     "-movflags faststart",
     "'#{output_path}'"
