@@ -21,6 +21,7 @@ sudo apt install -y \
     python3-pip \
     ncdu \
     mediainfo \
+    testdisk \
     renameutils # qmv command
 
 

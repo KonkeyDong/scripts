@@ -136,6 +136,7 @@ MI()
     local audio=$(mediainfo --InForm="Audio;%Format%" "${file}")
     local width=$(mediainfo --InForm="Video;%Width%" "${file}")
     local height=$(mediainfo --InForm="Video;%Height%" "${file}")
+    local channels=$(mediainfo --InForm="Audio;%Channel(s)%" "${file}")
 
     echo "Resolution : $width X $height"
 
@@ -147,5 +148,6 @@ MI()
     fi
 
     echo "Audio Codec: $audio"
+    echo "Audio Channels: $channels"
 }
 
