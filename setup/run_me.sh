@@ -69,11 +69,13 @@ echo "Copying config directory ..."
 mkdir -p ~/.config
 cp -r ${GIT_CONFIG_DIR}/* ${CONFIG_DIR}
 
+
 echo "run [download_vscode.sh] to download VS Code separately."
 echo "run [download_joplin.sh] to download Joplin separately."
 echo "run [download_docker.sh] to download Docker separately."
 echo "run [download_plex.sh] to download Plex Media Server separately."
 echo "run [download_nextcloud.sh] to download Nextcloud separately."
+echo "run [download_quicklisp.sh] to download Quicklisp library manager separately."
 
 # add aliases
 source ${BASH_RC}
