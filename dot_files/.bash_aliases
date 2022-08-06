@@ -42,5 +42,5 @@ alias anime="cd ${MEDIA_ROOT}/anime/tv_shows"
 alias anime_movies="cd ${MEDIA_ROOT}/anime/movies"
 
 alias qmv='qmv -e nvim -o width=90,spaces'
-alias convert='ruby /home/ubuntu/git_projects/scripts/ruby/executables/convert_mvk_to_mp4.rb '
+alias convert='ruby $HOME/git_projects/scripts/ruby/executables/convert_mvk_to_mp4.rb '
 alias ff="ffprobe -show_streams "
