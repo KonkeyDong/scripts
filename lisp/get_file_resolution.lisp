@@ -26,7 +26,7 @@
 (defun make-directory (dir)
     "Create a directory, but only if the directory doesn't already exist."
   (unless (probe-file dir)
-    (ensure-directories-exist (format nil "~a/" dir)))
+    (ensure-directories-exist (format nil "~A/" dir))))
 
 (defun move-file (source destination)
     "Move file from source to destination using the mv command."
