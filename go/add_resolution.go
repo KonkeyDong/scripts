@@ -50,6 +50,7 @@ func main() {
 
 		// build new file name at new destination folder with resolution added to the file name
 		newFileName := filepath.Join(newDirPath, fmt.Sprintf("%s_%sp%s", baseName, resolution, extension))
+		newFileName = strings.ReplaceAll(newFileName, "-", "_")
 		err = os.Rename(file, newFileName)
 		if err != nil {
 			fmt.Println("Problem renaming file name: ", err)
